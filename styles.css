@@ -1797,6 +1797,16 @@ blockquote {
   font-weight: 950;
 }
 
+.advisor-photo {
+  width: 82px;
+  height: 82px;
+  border: 1px solid #a8f2e6;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center 30%;
+  box-shadow: 0 12px 26px rgba(11, 19, 40, 0.12);
+}
+
 .feature-preview {
   border: 1px solid #a8f2e6;
   border-radius: 22px;
