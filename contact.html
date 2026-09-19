@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact | Aurora</title><link rel="stylesheet" href="styles.css"></head>
+  <body>
+    <header class="site-header"><a class="brand" href="index.html"><img src="assets/aurora-logo.png" alt="Aurora logo"><span>Aurora <small>by Ragaven</small></span></a><nav class="site-nav"><a href="index.html">Home</a><a href="overview.html">Overview</a><a href="personas.html">Personas</a><a href="star-features.html">Star Features</a><a href="angel-features.html">Angel Features</a><a href="care-intelligence.html">Aurora Intelligence</a><a href="pricing.html">Pricing</a><a href="team.html">Team</a><a aria-current="page" class="nav-cta" href="contact.html">Contact</a></nav></header>
+    <main>
+      <section class="section"><div class="wrap split">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h1>Start a conversation with Aurora.</h1>
+          <p class="lead">For families, care facilities, hospitals, partners, and investors who want proactive care intelligence.</p>
+          <p>The email destination is protected behind the form endpoint and is not exposed in page markup.</p>
+          <article class="contact-advisor-card" aria-label="Strategic advisor">
+            <img src="assets/mike-uhl.png" alt="Mike Uhl">
+            <div>
+              <span>Strategic Advisor</span>
+              <h3>Mike Uhl, MS, MBA</h3>
+              <p>Board Chair, Strategic Advisor</p>
+            </div>
+          </article>
+        </div>
+        <form class="contact-form card" action="/api/contact" method="post" data-contact-form>
+          <input name="name" autocomplete="name" placeholder="Name" required>
+          <input name="email" autocomplete="email" placeholder="Email" required>
+          <input name="organization" placeholder="Organization">
+          <select name="interest" required>
+            <option value="">I am interested as...</option>
+            <option>Family caregiver</option>
+            <option>Senior care facility</option>
+            <option>Hospital or discharge team</option>
+            <option>Investor or partner</option>
+          </select>
+          <textarea name="message" placeholder="How can Aurora help?"></textarea>
+          <button class="button primary" type="submit">Send message</button>
+          <p data-form-status aria-live="polite"></p>
+        </form>
+      </div></section>
+    </main>
+    <footer class="footer"><div class="wrap"><span>Ragaven LLC Confidential</span><span>© <span data-year></span> Ragaven</span></div></footer><script src="script.js"></script>
+  </body>
+</html>

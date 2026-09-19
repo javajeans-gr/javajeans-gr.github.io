@@ -1,0 +1,13 @@
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/clean-video/frame-01.jpg'
+duration 6
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/clean-video/frame-02.jpg'
+duration 7
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/clean-video/frame-03.jpg'
+duration 7
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/clean-video/frame-04.jpg'
+duration 6
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/clean-video/frame-05.jpg'
+duration 7
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/clean-video/frame-06.jpg'
+duration 6
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/clean-video/frame-06.jpg'

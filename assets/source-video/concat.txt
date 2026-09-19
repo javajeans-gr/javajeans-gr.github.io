@@ -1,0 +1,13 @@
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/voiceover-frames/frame-01.jpg'
+duration 6
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/voiceover-frames/frame-02.jpg'
+duration 6
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/voiceover-frames/frame-03.jpg'
+duration 6
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/voiceover-frames/frame-04.jpg'
+duration 6
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/voiceover-frames/frame-05.jpg'
+duration 6
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/voiceover-frames/frame-06.jpg'
+duration 6
+file '/Users/rajguru/projects/Aurora-iOS/website/aurora-ragaven-preview/assets/voiceover-frames/frame-06.jpg'
