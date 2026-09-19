@@ -1737,6 +1737,16 @@ blockquote {
   padding: 26px;
 }
 
+.founder-photo {
+  width: 92px;
+  height: 92px;
+  border: 1px solid #a8f2e6;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center 28%;
+  box-shadow: 0 14px 30px rgba(11, 19, 40, 0.14);
+}
+
 .credential-list {
   display: flex;
   flex-wrap: wrap;
