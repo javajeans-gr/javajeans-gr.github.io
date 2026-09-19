@@ -2703,6 +2703,10 @@ blockquote {
   padding: 0 26px 28px;
 }
 
+.price-card.ribboned {
+  padding: 0 26px 28px;
+}
+
 .price-ribbon {
   display: flex;
   align-items: center;
