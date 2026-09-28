@@ -3309,3 +3309,385 @@ blockquote {
     text-align: center;
   }
 }
+
+/* Professional responsive type system
+   Applied as a final override so every portal page uses the same restrained
+   scale across Safari, Chrome, Firefox, Edge, and mobile WebView browsers. */
+:root {
+  --type-hero: clamp(2.35rem, 4.15vw, 3.95rem);
+  --type-page-title: clamp(2.15rem, 3.55vw, 3.35rem);
+  --type-section-title: clamp(1.85rem, 2.65vw, 2.75rem);
+  --type-card-title: clamp(1.25rem, 1.45vw, 1.7rem);
+  --type-lead: clamp(1.05rem, 1.25vw, 1.35rem);
+  --type-body: clamp(0.98rem, 0.45vw + 0.86rem, 1.08rem);
+  --type-small: clamp(0.82rem, 0.28vw + 0.76rem, 0.95rem);
+  --line-tight: 1.08;
+  --line-title: 1.12;
+  --line-copy: 1.48;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: var(--type-body);
+  line-height: var(--line-copy);
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+span,
+strong,
+small,
+li,
+button {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+h1 {
+  font-size: var(--type-page-title);
+  line-height: var(--line-title);
+}
+
+h2 {
+  font-size: var(--type-section-title);
+  line-height: var(--line-title);
+}
+
+h3 {
+  font-size: var(--type-card-title);
+  line-height: 1.18;
+}
+
+.lead,
+.section > .wrap > .lead,
+.section > .wrap > div > .lead,
+.hero-copy .lead,
+.problem-hero-copy .lead,
+.home-hero-simple .problem-hero-copy .lead,
+.team-hero .lead,
+.care-intel-hero .lead,
+.pricing-hero .lead,
+.persona-intro .lead,
+.home-care-copy .lead {
+  max-width: 68ch;
+  font-size: var(--type-lead);
+  line-height: var(--line-copy);
+}
+
+.problem-hero,
+.hero,
+.section,
+.pricing-hero {
+  padding-right: clamp(1.25rem, 4vw, 4rem);
+  padding-left: clamp(1.25rem, 4vw, 4rem);
+}
+
+.hero {
+  min-height: 620px;
+}
+
+.home-hero-simple {
+  padding-top: clamp(3.25rem, 6vw, 4.75rem);
+  padding-bottom: clamp(3.4rem, 6vw, 4.9rem);
+}
+
+.problem-hero-copy,
+.hero-copy,
+.persona-intro > div,
+.team-hero .split > div,
+.care-intel-hero .split > div,
+.pricing-hero-copy,
+.home-care-copy {
+  min-width: 0;
+}
+
+.problem-hero-copy h1,
+.home-hero-simple .problem-hero-copy h1,
+.section > .wrap > h1,
+.section > .wrap > div > h1,
+.hero-copy h1,
+.persona-intro h1,
+.team-hero h1,
+.care-intel-hero h1,
+.pricing-hero h1,
+.home-care-copy h2 {
+  max-width: 15.5ch;
+  font-size: var(--type-hero);
+  line-height: var(--line-tight);
+}
+
+.home-video-wrap h2,
+.home-basics-section h2,
+.hidden-story-head h2,
+.process-grid h3,
+.hero-care-card h2,
+.feature-preview h2,
+.care-duo article h3,
+.enterprise-panel h2 {
+  font-size: var(--type-section-title);
+  line-height: var(--line-title);
+}
+
+.home-hero-card strong,
+.team-proof-panel strong {
+  font-size: clamp(1.65rem, 2.25vw, 2.45rem);
+  line-height: 1.1;
+}
+
+.home-hero-card span,
+.team-proof-panel span,
+.feature-card p,
+.process-grid p,
+.care-duo article p,
+.plan-copy,
+.enterprise-panel p,
+.script-steps p,
+.advisor-card p,
+.founder-card p,
+.persona-card p,
+.persona-role-card p,
+.scenario-card p {
+  font-size: var(--type-body);
+  line-height: var(--line-copy);
+}
+
+.button {
+  min-height: 48px;
+  padding: 0.85rem 1.25rem;
+  font-size: clamp(0.98rem, 0.45vw + 0.85rem, 1.12rem);
+  line-height: 1.12;
+  white-space: normal;
+}
+
+.button-row,
+.store-row,
+.persona-actions {
+  align-items: center;
+}
+
+.site-nav {
+  row-gap: 4px;
+}
+
+.site-nav a,
+.eyebrow,
+.credential-list span,
+.billing-toggle span,
+.discount-pill,
+.badge {
+  font-size: var(--type-small);
+}
+
+.card,
+.feature-card,
+.process-grid article,
+.founder-card,
+.advisor-card,
+.team-proof-panel,
+.feature-preview,
+.care-duo article,
+.price-card,
+.enterprise-panel {
+  min-width: 0;
+}
+
+.card-grid,
+.process-grid,
+.pricing-cards,
+.team-list,
+.advisor-grid,
+.persona-role-grid,
+.persona-scenarios {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+
+.split,
+.hero-grid,
+.home-hero-grid,
+.problem-hero-grid,
+.persona-intro,
+.team-hero .split,
+.care-intel-hero .split,
+.pricing-hero-grid,
+.home-care-circle {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.home-hero-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.48fr);
+}
+
+.persona-intro {
+  grid-template-columns: minmax(0, 0.82fr) minmax(20rem, 1.18fr);
+}
+
+.team-hero .split,
+.care-intel-hero .split {
+  grid-template-columns: minmax(0, 0.9fr) minmax(18rem, 0.75fr);
+}
+
+.care-network,
+.personas-diagram,
+.persona-lifecycle-card,
+.lifecycle-panel {
+  min-width: 0;
+}
+
+.personas-diagram img,
+.care-network img {
+  width: 100%;
+  height: auto;
+}
+
+@supports not (font-size: clamp(1rem, 2vw, 2rem)) {
+  h1,
+  .problem-hero-copy h1,
+  .home-hero-simple .problem-hero-copy h1,
+  .section > .wrap > h1,
+  .section > .wrap > div > h1,
+  .hero-copy h1,
+  .persona-intro h1,
+  .team-hero h1,
+  .care-intel-hero h1,
+  .pricing-hero h1 {
+    font-size: 54px;
+  }
+
+  h2,
+  .home-video-wrap h2,
+  .home-basics-section h2 {
+    font-size: 38px;
+  }
+
+  .lead,
+  .hero-copy .lead,
+  .problem-hero-copy .lead {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .problem-hero-grid,
+  .hero-grid,
+  .home-hero-grid,
+  .split,
+  .persona-intro,
+  .team-hero .split,
+  .care-intel-hero .split,
+  .pricing-hero-grid,
+  .home-care-circle {
+    grid-template-columns: 1fr;
+  }
+
+  .problem-hero-copy h1,
+  .home-hero-simple .problem-hero-copy h1,
+  .section > .wrap > h1,
+  .section > .wrap > div > h1,
+  .hero-copy h1,
+  .persona-intro h1,
+  .team-hero h1,
+  .care-intel-hero h1,
+  .pricing-hero h1,
+  .home-care-copy h2 {
+    max-width: 18ch;
+  }
+}
+
+@media (max-width: 720px) {
+  :root {
+    --type-hero: clamp(2rem, 9vw, 2.85rem);
+    --type-page-title: clamp(1.85rem, 8vw, 2.55rem);
+    --type-section-title: clamp(1.55rem, 6vw, 2.05rem);
+    --type-lead: clamp(1rem, 3.8vw, 1.16rem);
+  }
+
+  .site-header {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .problem-hero,
+  .hero,
+  .section,
+  .pricing-hero {
+    padding-top: 3.2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .hero-copy {
+    padding-top: 1.5rem;
+  }
+
+  .problem-hero-copy h1,
+  .home-hero-simple .problem-hero-copy h1,
+  .section > .wrap > h1,
+  .section > .wrap > div > h1,
+  .hero-copy h1,
+  .persona-intro h1,
+  .team-hero h1,
+  .care-intel-hero h1,
+  .pricing-hero h1,
+  .home-care-copy h2 {
+    max-width: 100%;
+    line-height: 1.1;
+  }
+
+  .button-row,
+  .persona-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button-row .button,
+  .persona-actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-nav a {
+    padding: 8px 9px;
+  }
+
+  .home-hero-card,
+  .team-proof-panel,
+  .feature-preview,
+  .enterprise-panel,
+  .price-card {
+    padding: 1.1rem;
+  }
+}
