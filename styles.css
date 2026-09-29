@@ -940,9 +940,9 @@ img, video { display: block; max-width: 100%; }
   min-height: 760px;
   padding: 72px clamp(20px, 5vw, 72px) 82px;
   background:
-    radial-gradient(circle at 8% 18%, rgba(22, 185, 173, 0.22), transparent 30%),
-    linear-gradient(90deg, rgba(255,255,255,0.96), rgba(255,255,255,0.82) 43%, rgba(255,255,255,0.28)),
-    url("assets/deck/deck-media-01.png") center / cover no-repeat;
+    radial-gradient(circle at 10% 20%, rgba(22, 185, 173, 0.2), transparent 30%),
+    radial-gradient(circle at 92% 8%, rgba(47, 128, 237, 0.11), transparent 34%),
+    linear-gradient(135deg, #f5fffc 0%, #ffffff 48%, #f6f8ff 100%);
 }
 
 .hero-grid {
@@ -1080,6 +1080,7 @@ h3 {
 }
 
 .store-badge-img {
+  position: relative;
   display: inline-flex;
   width: min(220px, 44vw);
   border-radius: 12px;
@@ -1099,8 +1100,28 @@ h3 {
 
 .store-badge-img.disabled {
   cursor: not-allowed;
-  filter: saturate(0.35);
-  opacity: 0.72;
+  filter: grayscale(1);
+  opacity: 0.66;
+  pointer-events: none;
+}
+
+.store-badge-img.disabled img {
+  filter: grayscale(1);
+}
+
+.store-badge-img.availability-badge::after {
+  content: attr(data-availability);
+  position: absolute;
+  right: 10px;
+  bottom: 9px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #4b5563;
+  font-size: 14px;
+  font-weight: 950;
+  line-height: 1;
+  padding: 4px 8px;
+  box-shadow: 0 6px 16px rgba(11, 19, 40, 0.18);
 }
 
 .store-badge,
