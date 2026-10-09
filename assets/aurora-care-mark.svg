@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="t">
+  <title id="t">Aurora Care by Ragaven</title>
+  <defs>
+    <linearGradient id="plus" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FF6A4D"/>
+      <stop offset="1" stop-color="#E5392B"/>
+    </linearGradient>
+  </defs>
+  <!-- Heart: orange outline -->
+  <path d="M256 446C238 431 58 318 58 182C58 112 110 62 176 62C212 62 240 80 256 108C272 80 300 62 336 62C402 62 454 112 454 182C454 318 274 431 256 446Z"
+        fill="none" stroke="#F7931E" stroke-width="30" stroke-linejoin="round"/>
+  <g transform="translate(256 268) scale(1.1) translate(-256 -268)">
+  <!-- Plus sign -->
+  <path d="M220 146h72a14 14 0 0 1 14 14v58h58a14 14 0 0 1 14 14v72a14 14 0 0 1-14 14h-58v58a14 14 0 0 1-14 14h-72a14 14 0 0 1-14-14v-58h-58a14 14 0 0 1-14-14v-72a14 14 0 0 1 14-14h58v-58a14 14 0 0 1 14-14z"
+        fill="url(#plus)" stroke="#FFFFFF" stroke-width="7" stroke-linejoin="round" paint-order="stroke"/>
+  <!-- Heartbeat curve through the plus -->
+  <path d="M148 268h68l12-16 14 16 18-74 26 122 18-62 10 14h64"
+        fill="none" stroke="#FFFFFF" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
