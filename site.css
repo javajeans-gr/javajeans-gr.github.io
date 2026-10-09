@@ -113,10 +113,17 @@ p { margin: 0; }
 /* Hero */
 .hero { background: linear-gradient(180deg, var(--dawn-1) 0%, var(--dawn-2) 70%, var(--bg) 100%); }
 .hero-grid { display: grid; gap: 40px; padding-block: 40px 56px; align-items: center; }
-@media (min-width: 960px) { .hero-grid { grid-template-columns: 1.05fr 1fr; padding-block: 64px 80px; } }
+@media (min-width: 960px) { .hero-grid { grid-template-columns: 1.3fr 1fr; gap: 48px; padding-block: 56px 72px; } }
+.hero-copy { container-type: inline-size; }
+.hero-copy > * { min-width: 0; }
+.hero h1 { font-size: clamp(1.7rem, 6.9cqi, 3.15rem); text-wrap: initial; }
+.hero h1 .line { display: block; white-space: nowrap; }
+@media (min-width: 960px) {
+  .hero-what { white-space: nowrap; }
+}
 .hero-copy { display: grid; gap: 20px; min-width: 0; }
 .hero-what { font-size: 1.05rem; font-weight: 700; color: var(--ink-2); }
-.hero-sub { font-size: 1.3rem; color: var(--ink-2); max-width: 34rem; }
+.hero-sub { font-size: 1.3rem; color: var(--ink-2); max-width: 40rem; }
 .reassure { display: grid; gap: 6px; font-size: 1.05rem; }
 .reassure strong { color: var(--ink); }
 .availability { font-size: 1rem; color: var(--ink-2); }
