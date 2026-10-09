@@ -9,256 +9,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700;800&display=swap">
-<style>
-/* Layout: mobile-first single column; hero splits copy / product+photo at 960px; dawn band only behind the hero. */
-:root {
-  --bg: #fafbf8;
-  --surface: #ffffff;
-  --surface-2: #eef5f1;
-  --ink: #132c2b;
-  --ink-2: #3a5553;
-  --line: #cfdcd6;
-  --accent: #0a5f59;
-  --accent-ink: #ffffff;
-  --accent-soft: #d9ece7;
-  --dawn-1: #fdeee2;
-  --dawn-2: #e6f3ee;
-  --pending-bg: #fff4d6;
-  --pending-ink: #6b4a00;
-  --pending-line: #c99a22;
-  --phone: #0c1018;
-  --shadow: 0 18px 50px rgba(19, 44, 43, 0.14);
-  --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --max: 1160px;
-  --radius: 14px;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0f1716; --surface: #15201f; --surface-2: #1b2928; --ink: #eaf3f0; --ink-2: #b8ccc7;
-    --line: #2d403e; --accent: #5fd0c3; --accent-ink: #062523; --accent-soft: #1d3a37;
-    --dawn-1: #2a1f1a; --dawn-2: #12231f; --pending-bg: #3a2e10; --pending-ink: #ffe29a; --pending-line: #a37a14;
-    --shadow: 0 18px 50px rgba(0, 0, 0, 0.45); color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #0f1716; --surface: #15201f; --surface-2: #1b2928; --ink: #eaf3f0; --ink-2: #b8ccc7;
-  --line: #2d403e; --accent: #5fd0c3; --accent-ink: #062523; --accent-soft: #1d3a37;
-  --dawn-1: #2a1f1a; --dawn-2: #12231f; --pending-bg: #3a2e10; --pending-ink: #ffe29a; --pending-line: #a37a14;
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45); color-scheme: dark;
-}
-
-* { box-sizing: border-box; }
-[hidden] { display: none !important; }
-html { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-body {
-  margin: 0; background: var(--bg); color: var(--ink);
-  font-family: var(--font); font-size: 1.1875rem; line-height: 1.6;
-}
-img { display: block; max-width: 100%; height: auto; }
-a { color: var(--accent); text-underline-offset: 3px; }
-a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
-  outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px;
-}
-h1, h2, h3 { line-height: 1.15; text-wrap: balance; margin: 0; }
-h1 { font-size: clamp(2.25rem, 6vw, 3.6rem); font-weight: 800; letter-spacing: -0.01em; }
-h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; }
-h3 { font-size: 1.3rem; font-weight: 700; }
-p { margin: 0; }
-.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: 16px; }
-@media (min-width: 720px) { .wrap { padding-inline: 32px; } }
-.section { padding-block: 64px; }
-.section-head { display: grid; gap: 12px; max-width: 46rem; margin-bottom: 32px; }
-.eyebrow { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
-.lead { font-size: 1.25rem; color: var(--ink-2); max-width: 40rem; }
-.muted { color: var(--ink-2); }
-.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-.skip-link { position: absolute; left: 16px; top: -60px; background: var(--accent); color: var(--accent-ink); padding: 10px 16px; border-radius: 8px; z-index: 50; }
-.skip-link:focus { top: 12px; }
-
-/* Pending markers: visible review flags for copy that needs legal sign-off or a decision */
-.pending {
-  display: inline-block; background: var(--pending-bg); color: var(--pending-ink);
-  border: 1.5px dashed var(--pending-line); border-radius: 6px;
-  padding: 1px 8px; font-size: 0.85em; font-weight: 700; letter-spacing: 0.02em;
-}
-.review-bar { background: var(--pending-bg); color: var(--pending-ink); border-bottom: 1.5px dashed var(--pending-line); font-size: 1rem; }
-.review-bar .wrap { padding-block: 10px; }
-
-/* Buttons */
-.button {
-  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  min-height: 52px; padding: 12px 24px; border-radius: 999px;
-  font: inherit; font-weight: 700; font-size: 1.1rem; text-decoration: none; cursor: pointer;
-  border: 2px solid transparent;
-}
-.button-primary { background: var(--accent); color: var(--accent-ink); }
-.button-primary:hover { filter: brightness(1.08); }
-.button-secondary { background: transparent; color: var(--accent); border-color: var(--accent); }
-.button-secondary:hover { background: var(--accent-soft); }
-.button-row { display: flex; flex-wrap: wrap; gap: 12px; }
-
-/* Header */
-.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
-.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
-.brand img { width: 40px; height: 40px; border-radius: 10px; }
-.brand strong { display: block; font-size: 1.15rem; line-height: 1.1; }
-.brand small { display: block; font-size: 0.85rem; color: var(--ink-2); }
-.site-nav { display: none; }
-.site-nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 1rem; padding: 10px 4px; min-height: 44px; display: inline-flex; align-items: center; }
-.site-nav a:hover { color: var(--accent); }
-.header-cta { display: none; }
-.menu-button {
-  min-width: 48px; min-height: 48px; border-radius: 12px; border: 1.5px solid var(--line);
-  background: var(--surface); color: var(--ink); font: inherit; font-weight: 700; font-size: 1rem; padding: 0 14px; cursor: pointer;
-}
-.mobile-nav { border-top: 1px solid var(--line); padding-block: 8px 16px; display: grid; gap: 4px; }
-.mobile-nav a { color: var(--ink); text-decoration: none; font-weight: 600; min-height: 48px; display: flex; align-items: center; }
-.mobile-nav .button { margin-top: 8px; color: var(--accent-ink); }
-@media (min-width: 1040px) {
-  .site-nav { display: flex; gap: 22px; }
-  .header-cta { display: inline-flex; min-height: 48px; padding: 10px 20px; font-size: 1rem; }
-  .menu-button, .mobile-nav { display: none !important; }
-}
-
-/* Hero */
-.hero { background: linear-gradient(180deg, var(--dawn-1) 0%, var(--dawn-2) 70%, var(--bg) 100%); }
-.hero-grid { display: grid; gap: 40px; padding-block: 40px 56px; align-items: center; }
-@media (min-width: 960px) { .hero-grid { grid-template-columns: 1.05fr 1fr; padding-block: 64px 80px; } }
-.hero-copy { display: grid; gap: 20px; min-width: 0; }
-.hero-what { font-size: 1.05rem; font-weight: 700; color: var(--ink-2); }
-.hero-sub { font-size: 1.3rem; color: var(--ink-2); max-width: 34rem; }
-.reassure { display: grid; gap: 6px; font-size: 1.05rem; }
-.reassure strong { color: var(--ink); }
-.availability { font-size: 1rem; color: var(--ink-2); }
-.hero-visual { position: relative; min-width: 0; padding-bottom: 24px; }
-.photo-slot {
-  aspect-ratio: 4 / 3; width: 100%; max-width: 100%; border-radius: 22px; overflow: hidden;
-  background: repeating-linear-gradient(135deg, var(--surface-2) 0 14px, var(--surface) 14px 28px);
-  border: 2px dashed var(--pending-line); display: grid; place-items: center; padding: 24px 24px 24px 24px;
-}
-.photo-slot .slot-note { max-width: 22rem; font-size: 0.95rem; color: var(--ink-2); display: grid; gap: 8px; }
-@media (min-width: 560px) { .photo-slot { place-items: center start; } .photo-slot .slot-note { max-width: 58%; } }
-.hero-phone {
-  position: absolute; right: 4%; bottom: 0; width: clamp(96px, 28%, 200px);
-  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.28));
-}
-.hero-phone figcaption { font-size: 0.8rem; text-align: center; color: var(--ink-2); margin-top: 6px; background: var(--bg); border-radius: 6px; padding: 2px 4px; }
-
-/* Routing */
-.routing { padding-block: 48px; }
-.route-grid { display: grid; gap: 16px; }
-@media (min-width: 760px) { .route-grid { grid-template-columns: repeat(3, 1fr); } }
-.route-card {
-  display: grid; gap: 8px; padding: 22px; border-radius: var(--radius); background: var(--surface);
-  border: 1.5px solid var(--line); color: var(--ink); text-decoration: none; min-height: 44px;
-}
-.route-card:hover { border-color: var(--accent); }
-.route-card strong { font-size: 1.25rem; }
-.route-card span { color: var(--ink-2); font-size: 1.05rem; }
-.route-card .go { color: var(--accent); font-weight: 700; }
-.org-link { margin-top: 20px; font-size: 1.05rem; }
-
-/* Benefits */
-.benefits { background: var(--surface); border-block: 1px solid var(--line); }
-.benefit-grid { display: grid; gap: 28px; }
-@media (min-width: 640px) { .benefit-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) { .benefit-grid { grid-template-columns: repeat(4, 1fr); } }
-.benefit { display: grid; gap: 12px; align-content: start; min-width: 0; }
-.benefit-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--accent-soft); display: grid; place-items: center; }
-.benefit-icon svg { width: 30px; height: 30px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.benefit p { color: var(--ink-2); }
-.benefit .limit { font-size: 1rem; }
-.benefit a { font-weight: 700; min-height: 44px; display: inline-flex; align-items: center; }
-
-/* Walkthrough */
-.steps { display: grid; gap: 24px; counter-reset: step; }
-@media (min-width: 960px) { .steps { grid-template-columns: repeat(3, 1fr); } }
-.step { display: grid; gap: 16px; align-content: start; background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 22px; min-width: 0; }
-.step-num { font-weight: 800; color: var(--accent); font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
-.who { display: grid; gap: 6px; font-size: 1.02rem; }
-.who dt { font-weight: 700; }
-.who dd { margin: 0 0 8px; color: var(--ink-2); }
-.screen {
-  background: var(--phone); color: #e9eef5; border-radius: 22px; padding: 18px 16px; font-size: 0.95rem;
-  display: grid; gap: 10px; max-width: 300px; width: 100%; margin-inline: auto; border: 6px solid #1e2533;
-}
-.screen-title { font-weight: 700; font-size: 1rem; text-align: center; color: #ffffff; }
-.screen-row { background: #1c2333; border-radius: 12px; padding: 10px 12px; display: grid; gap: 2px; }
-.screen-row small { color: #a9b4c6; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; }
-.screen-row b { color: #ffffff; font-size: 1.05rem; }
-.screen-row.flag { border-left: 4px solid #f2b84b; }
-.screen-btn { background: #23c4e6; color: #04121a; border-radius: 999px; text-align: center; padding: 8px; font-weight: 700; }
-.screen-step img { max-width: 220px; margin-inline: auto; }
-.demo-tag { font-size: 0.85rem; text-align: center; color: var(--ink-2); }
-.walk-note { margin-top: 24px; padding: 18px 20px; border-radius: var(--radius); background: var(--accent-soft); font-size: 1.05rem; max-width: 60rem; }
-.video-row { display: grid; gap: 20px; margin-top: 36px; align-items: center; }
-@media (min-width: 860px) { .video-row { grid-template-columns: 1fr 1fr; } }
-.video-row video { width: 100%; border-radius: var(--radius); background: #000; }
-
-/* Credibility + testimonials */
-.cred-grid, .quote-grid { display: grid; gap: 16px; }
-@media (min-width: 760px) { .cred-grid { grid-template-columns: repeat(2, 1fr); } .quote-grid { grid-template-columns: repeat(3, 1fr); } }
-.cred, .quote { padding: 22px; border-radius: var(--radius); border: 1.5px solid var(--line); background: var(--surface); display: grid; gap: 10px; align-content: start; }
-.proof-strip { margin-top: 16px; min-height: 88px; border: 2px dashed var(--pending-line); border-radius: var(--radius); display: grid; place-items: center; padding: 16px; text-align: center; }
-.quote { min-height: 180px; border-style: dashed; border-color: var(--pending-line); }
-.quote p { color: var(--ink-2); font-size: 1rem; }
-
-/* FAQ + trust */
-.faq { display: grid; gap: 12px; max-width: 52rem; }
-details { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); }
-summary { cursor: pointer; padding: 16px 20px; min-height: 56px; font-weight: 700; font-size: 1.15rem; list-style-position: outside; }
-details[open] summary { border-bottom: 1px solid var(--line); }
-details .answer { padding: 16px 20px 20px; display: grid; gap: 10px; color: var(--ink-2); }
-.trust { background: var(--surface); border-block: 1px solid var(--line); }
-.trust-grid { display: grid; gap: 24px; }
-@media (min-width: 760px) { .trust-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
-.trust-item { display: grid; gap: 8px; align-content: start; }
-.trust-item p { color: var(--ink-2); }
-.limits { margin-top: 32px; padding: 20px; border-radius: var(--radius); border: 1.5px solid var(--line); background: var(--bg); max-width: 60rem; }
-
-/* Org band */
-.org-band { display: grid; gap: 16px; padding: 28px; border-radius: var(--radius); background: var(--surface-2); align-items: center; }
-@media (min-width: 860px) { .org-band { grid-template-columns: 1fr auto; } }
-
-/* Signup */
-.signup { background: linear-gradient(180deg, var(--bg), var(--dawn-1)); }
-.signup-grid { display: grid; gap: 32px; }
-@media (min-width: 900px) { .signup-grid { grid-template-columns: 1fr 1fr; align-items: start; } }
-.signup-form { display: grid; gap: 20px; background: var(--surface); border: 1.5px solid var(--line); border-radius: 20px; padding: 24px; box-shadow: var(--shadow); }
-.field { display: grid; gap: 6px; }
-.field label, legend { font-weight: 700; font-size: 1.1rem; }
-.req, .opt { font-weight: 400; color: var(--ink-2); font-size: 0.95rem; }
-input[type="email"] {
-  width: 100%; min-height: 56px; padding: 12px 14px; font: inherit; font-size: 1.15rem;
-  border: 2px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--ink);
-}
-input[type="email"][aria-invalid="true"] { border-color: #b3261e; }
-.field-error { color: #b3261e; font-weight: 700; font-size: 1rem; }
-fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
-.choice { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 6px 12px; border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer; }
-.choice input { width: 22px; height: 22px; accent-color: var(--accent); }
-.form-status { border-radius: 12px; padding: 14px 16px; background: var(--pending-bg); color: var(--pending-ink); border: 1.5px dashed var(--pending-line); font-size: 1rem; }
-.next-steps { display: grid; gap: 12px; }
-.next-steps ol { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; color: var(--ink-2); }
-.contact-box { padding: 18px 20px; border-radius: var(--radius); border: 1.5px solid var(--line); background: var(--surface); display: grid; gap: 6px; }
-
-/* Footer */
-.site-footer { border-top: 1px solid var(--line); padding-block: 40px; font-size: 1rem; }
-.footer-grid { display: grid; gap: 24px; }
-@media (min-width: 860px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
-.footer-links { display: grid; gap: 4px; }
-.footer-links a { color: var(--ink); min-height: 44px; display: flex; align-items: center; }
-.safety-line { color: var(--ink-2); max-width: 34rem; }
-</style>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="review-bar" role="note">
-  <div class="wrap"><strong>Preview for review, not live.</strong> Amber tags mark copy that needs legal wording, a permission, or a decision before launch. Audience and feature links go to the current pages, which still need the same plain-language update.</div>
+  <div class="wrap"><strong>Preview for review, not live.</strong> Amber tags mark copy that needs legal wording, a permission, or a decision before launch. Inner pages carry the same amber tags.</div>
 </div>
 
 <header class="site-header">
@@ -269,20 +26,20 @@ fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
     </a>
     <nav class="site-nav" aria-label="Main">
       <a href="#how-it-works">How it works</a>
-      <a href="angel-features.html">For families</a>
-      <a href="star-features.html">For older adults</a>
-      <a href="personas.html">For care teams</a>
-      <a href="#trust">Trust &amp; privacy</a>
+      <a href="families.html">For families</a>
+      <a href="for-yourself.html">For older adults</a>
+      <a href="care-teams.html">For care teams</a>
+      <a href="trust.html">Trust &amp; privacy</a>
     </nav>
     <a class="button button-primary header-cta" href="#signup">Get launch updates</a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu>Menu</button>
   </div>
   <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Main, mobile" hidden data-mobile-nav>
     <a href="#how-it-works">How it works</a>
-    <a href="angel-features.html">For families</a>
-    <a href="star-features.html">For older adults</a>
-    <a href="personas.html">For care teams</a>
-    <a href="#trust">Trust &amp; privacy</a>
+    <a href="families.html">For families</a>
+    <a href="for-yourself.html">For older adults</a>
+    <a href="care-teams.html">For care teams</a>
+    <a href="trust.html">Trust &amp; privacy</a>
     <a class="button button-primary" href="#signup">Get launch updates</a>
   </nav>
 </header>
@@ -326,17 +83,17 @@ fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
     <div class="wrap">
       <h2 id="route-title" class="visually-hidden">Find what fits you</h2>
       <div class="route-grid">
-        <a class="route-card" href="angel-features.html">
+        <a class="route-card" href="families.html">
           <strong>I'm supporting a parent</strong>
           <span>See how she's doing between calls, and coordinate with family.</span>
           <span class="go">For families</span>
         </a>
-        <a class="route-card" href="star-features.html">
+        <a class="route-card" href="for-yourself.html">
           <strong>I'm organizing my own care</strong>
           <span>Stay in charge of your health, and bring in the people you choose.</span>
           <span class="go">Using Aurora Care yourself</span>
         </a>
-        <a class="route-card" href="personas.html">
+        <a class="route-card" href="care-teams.html">
           <strong>I'm a professional caregiver</strong>
           <span>Share one picture with the family and make handoffs simpler.</span>
           <span class="go">For care teams</span>
@@ -358,25 +115,25 @@ fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
           <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M7 20c0-3 2.2-5 5-5s5 2 5 5"/><path d="M2 19c0-2 1.3-3.5 3-3.5"/><path d="M22 19c0-2-1.3-3.5-3-3.5"/></svg></div>
           <h3>Easy to use, with a care circle you choose</h3>
           <p>It works on the phone you already have. Your care circle is the family and caregivers you invite, and you decide what each person sees.</p>
-          <a href="star-features.html">Learn more<span class="visually-hidden"> about the care circle</span></a>
+          <a href="product.html#care-circle">Learn more<span class="visually-hidden"> about the care circle</span></a>
         </article>
         <article class="benefit">
           <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M8.5 13h2l1.2-3 1.6 5 1.2-2H16"/></svg></div>
           <h3>Vitals and trends from a 30-second check</h3>
           <p>A quick camera check on your phone shows how today's vitals compare with your own usual, so changes are easier to notice.</p>
-          <a href="star-features.html">Learn more<span class="visually-hidden"> about the 30-second check</span></a>
+          <a href="product.html#check">Learn more<span class="visually-hidden"> about the 30-second check</span></a>
         </article>
         <article class="benefit">
           <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/></svg></div>
           <h3>Talk to your phone for immediate help</h3>
           <p>Say your help phrase and the people in your care circle get an alert right away. Your phone needs to be close enough to hear you.</p>
-          <a href="angel-features.html">Learn more<span class="visually-hidden"> about voice help</span></a>
+          <a href="product.html#voice-help">Learn more<span class="visually-hidden"> about voice help</span></a>
         </article>
         <article class="benefit">
           <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 15h5M10 18h3"/></svg></div>
           <h3>Vitals, labs, and medicines in one place, ready for visits</h3>
           <p>Vitals, labs, medicines, reminders, and alerts sit together, with a report you can bring to doctor and lab visits.</p>
-          <a href="overview.html">Learn more<span class="visually-hidden"> about the visit report</span></a>
+          <a href="product.html#report">Learn more<span class="visually-hidden"> about the visit report</span></a>
         </article>
       </div>
     </div>
@@ -476,7 +233,7 @@ fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
         </div>
       </div>
       <div class="proof-strip" aria-label="Reserved for future proof points"><span class="pending">RESERVED: FUTURE PROOF STRIP (USER NUMBERS, PRESS). LEAVE EMPTY UNTIL REAL.</span></div>
-      <p class="org-link">Why we built Aurora Care: <a href="team.html">read the founder's story</a></p>
+      <p class="org-link">Why we built Aurora Care: <a href="about.html">read the founder's story</a></p>
     </div>
   </section>
 
@@ -606,10 +363,10 @@ fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
         </div>
       </div>
 
-      <form class="signup-form" id="launch-form" novalidate data-endpoint="">
+      <form class="signup-form" id="launch-form" novalidate data-site-form data-endpoint="" data-success="Thanks. Check your inbox for an email to confirm your address.">
         <div class="field">
           <label for="signup-email">Email <span class="req">(required)</span></label>
-          <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error">
+          <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error" data-error="email-error">
           <span class="field-error" id="email-error" hidden>Enter an email address like name@example.com.</span>
         </div>
         <fieldset>
@@ -619,7 +376,7 @@ fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
           <label class="choice" for="for-pro"><input type="radio" id="for-pro" name="exploring_for" value="professional"> People I care for professionally</label>
         </fieldset>
         <button class="button button-primary" type="submit">Get launch updates</button>
-        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden data-form-status></p>
       </form>
     </div>
   </section>
@@ -634,74 +391,21 @@ fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
     </div>
     <nav class="footer-links" aria-label="Product">
       <a href="#how-it-works">How it works</a>
-      <a href="angel-features.html">For families</a>
-      <a href="star-features.html">For older adults</a>
-      <a href="personas.html">For care teams</a>
+      <a href="families.html">For families</a>
+      <a href="for-yourself.html">For older adults</a>
+      <a href="care-teams.html">For care teams</a>
     </nav>
     <nav class="footer-links" aria-label="Company">
-      <a href="team.html">About</a>
+      <a href="about.html">About</a>
+      <a href="product.html">Product</a>
       <a href="team.html">Team</a>
       <a href="contact.html?topic=organization">Business inquiries</a>
-      <a href="#trust">Trust &amp; privacy</a>
+      <a href="trust.html">Trust &amp; privacy</a>
       <a href="privacy.html">Privacy policy</a>
     </nav>
   </div>
 </footer>
 
-<script>
-(function () {
-  var menu = document.querySelector("[data-menu]");
-  var mnav = document.querySelector("[data-mobile-nav]");
-  if (menu && mnav) {
-    menu.addEventListener("click", function () {
-      var open = mnav.hidden;
-      mnav.hidden = !open;
-      menu.setAttribute("aria-expanded", String(open));
-      menu.textContent = open ? "Close" : "Menu";
-    });
-    mnav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) { mnav.hidden = true; menu.setAttribute("aria-expanded", "false"); menu.textContent = "Menu"; }
-    });
-  }
-
-  var form = document.getElementById("launch-form");
-  if (!form) return;
-  var email = document.getElementById("signup-email");
-  var err = document.getElementById("email-error");
-  var status = document.getElementById("form-status");
-  var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-  function check() {
-    var ok = pattern.test(email.value.trim());
-    email.setAttribute("aria-invalid", ok ? "false" : "true");
-    err.hidden = ok;
-    return ok;
-  }
-  email.addEventListener("blur", function () { if (email.value) check(); });
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    if (!check()) { email.focus(); return; }
-    var endpoint = form.getAttribute("data-endpoint");
-    status.hidden = false;
-    if (!endpoint) {
-      // No signup service is connected yet. Say so plainly; never show a false confirmation.
-      status.textContent = "Preview only: the signup list isn't connected yet, so nothing was sent. Your entries are kept on this page.";
-      return;
-    }
-    status.textContent = "Sending...";
-    var data = new FormData(form);
-    fetch(endpoint, { method: "POST", body: data })
-      .then(function (r) {
-        if (!r.ok) throw new Error(String(r.status));
-        status.textContent = "Thanks. Check your inbox for an email to confirm your address.";
-        form.reset();
-      })
-      .catch(function () {
-        status.textContent = "We couldn't sign you up just now. Your email is still filled in, so please try again in a minute.";
-      });
-  });
-})();
-</script>
+<script src="site.js"></script>
 </body>
 </html>

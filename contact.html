@@ -1,33 +1,152 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Contact | Aurora</title><link rel="stylesheet" href="styles.css"></head>
-  <body>
-    <header class="site-header"><a class="brand" href="index.html"><img src="assets/aurora-logo.png" alt="Aurora logo"><span>Aurora <small>by Ragaven</small></span></a><nav class="site-nav"><a href="index.html">Home</a><a href="overview.html">Overview</a><a href="personas.html">Personas</a><a href="star-features.html">Star Features</a><a href="angel-features.html">Angel Features</a><a href="care-intelligence.html">Aurora Intelligence</a><a href="team.html">Team</a><a aria-current="page" class="nav-cta" href="contact.html">Contact</a></nav></header>
-    <main>
-      <section class="section"><div class="wrap split">
-        <div>
-          <p class="eyebrow">Contact</p>
-          <h1>Start a conversation with Aurora.</h1>
-          <p class="lead">For families, care facilities, hospitals, partners, and investors who want proactive care intelligence.</p>
-          <p>The email destination is protected behind the form endpoint and is not exposed in page markup.</p>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Contact | Aurora Care by Ragaven</title>
+<meta name="description" content="Questions about Aurora Care, or interest from a care community or organization. Tell us a little about you and we'll reply by email.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="review-bar" role="note">
+  <div class="wrap"><strong>Preview for review, not live.</strong> Amber tags mark copy that needs legal wording, a permission, or a decision before launch.</div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Aurora Care by Ragaven, home">
+      <img src="assets/aurora-logo.png" alt="" width="40" height="40">
+      <span><strong>Aurora Care</strong><small>by Ragaven</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="families.html">For families</a>
+      <a href="for-yourself.html">For older adults</a>
+      <a href="care-teams.html">For care teams</a>
+      <a href="trust.html">Trust &amp; privacy</a>
+    </nav>
+    <a class="button button-primary header-cta" href="index.html#signup">Get launch updates</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu>Menu</button>
+  </div>
+  <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Main, mobile" hidden data-mobile-nav>
+    <a href="index.html#how-it-works">How it works</a>
+    <a href="families.html">For families</a>
+    <a href="for-yourself.html">For older adults</a>
+    <a href="care-teams.html">For care teams</a>
+    <a href="trust.html">Trust &amp; privacy</a>
+    <a class="button button-primary" href="index.html#signup">Get launch updates</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="page-hero" aria-labelledby="page-title">
+    <div class="wrap">
+      <p class="eyebrow">Contact</p>
+      <h1 id="page-title">Ask us anything</h1>
+      <p class="lead">Questions about Aurora Care, or interested in offering it through your organization? Send us a note. If you only want to hear when Aurora Care launches, <a href="index.html#signup">get launch updates</a> instead. Your email is all we need.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="form-title">
+    <div class="wrap two-col">
+      <div class="prose">
+        <h2 id="form-title">What happens after you send this</h2>
+        <ol>
+          <li>We reply by email within <span class="pending">PENDING: RESPONSE TIME</span></li>
+          <li>For organizations, we'll suggest a time to talk.</li>
+        </ol>
+        <p>Please don't include health details. We don't need them to answer your question.</p>
+        <p><a href="trust.html">How we handle your information</a> · <a href="privacy.html">Privacy policy</a></p>
+      </div>
+
+      <form class="form-card" id="contact-form" novalidate data-site-form data-endpoint="" data-success="Thanks. We received your message and will reply by email.">
+        <div class="field">
+          <label for="c-name">Your name <span class="opt">(optional)</span></label>
+          <input id="c-name" name="name" type="text" autocomplete="name">
         </div>
-        <form class="contact-form card" action="/api/contact" method="post" data-contact-form>
-          <input name="name" autocomplete="name" placeholder="Name" required>
-          <input name="email" autocomplete="email" placeholder="Email" required>
-          <input name="organization" placeholder="Organization">
-          <select name="interest" required>
-            <option value="">I am interested as...</option>
-            <option>Family caregiver</option>
-            <option>Senior care facility</option>
-            <option>Hospital or discharge team</option>
-            <option>Investor or partner</option>
-          </select>
-          <textarea name="message" placeholder="How can Aurora help?"></textarea>
-          <button class="button primary" type="submit">Send message</button>
-          <p data-form-status aria-live="polite"></p>
-        </form>
-      </div></section>
-    </main>
-    <footer class="footer"><div class="wrap"><span>© <span data-year></span> Ragaven</span></div></footer><script src="script.js"></script>
-  </body>
+
+        <div class="field">
+          <label for="c-email">Email <span class="req">(required)</span></label>
+          <input id="c-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="c-email-error" data-error="c-email-error">
+          <span class="field-error" id="c-email-error" hidden>Enter an email address like name@example.com.</span>
+        </div>
+
+        <fieldset aria-describedby="c-reason-error">
+          <legend>I'm reaching out as <span class="req">(required)</span></legend>
+          <label class="choice" for="r-self"><input type="radio" id="r-self" name="reason" value="self" required data-error="c-reason-error"> I'm exploring Aurora Care for myself</label>
+          <label class="choice" for="r-family"><input type="radio" id="r-family" name="reason" value="family" data-error="c-reason-error"> I'm supporting a parent or family member</label>
+          <label class="choice" for="r-pro"><input type="radio" id="r-pro" name="reason" value="professional" data-error="c-reason-error"> I'm a professional caregiver</label>
+          <label class="choice" for="r-org"><input type="radio" id="r-org" name="reason" value="organization" data-error="c-reason-error"> A care community, employer, or health organization</label>
+          <label class="choice" for="r-other"><input type="radio" id="r-other" name="reason" value="other" data-error="c-reason-error"> Press, investor, or something else</label>
+          <span class="field-error" id="c-reason-error" hidden>Choose the option that fits you best.</span>
+        </fieldset>
+
+        <div class="org-fields" data-org-fields hidden>
+          <div class="field">
+            <label for="c-org">Organization name <span class="req">(required)</span></label>
+            <input id="c-org" name="organization" type="text" autocomplete="organization" data-required-when-shown aria-describedby="c-org-error" data-error="c-org-error">
+            <span class="field-error" id="c-org-error" hidden>Enter your organization's name.</span>
+          </div>
+          <div class="field">
+            <label for="c-role">Your role <span class="opt">(optional)</span></label>
+            <input id="c-role" name="role" type="text" autocomplete="organization-title">
+          </div>
+          <div class="field">
+            <label for="c-type">Type of organization <span class="opt">(optional)</span></label>
+            <select id="c-type" name="organization_type">
+              <option value="">Choose one</option>
+              <option>Independent or assisted living community</option>
+              <option>Home care agency</option>
+              <option>Employer offering a benefit</option>
+              <option>Hospital or health system</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="c-message">Your message <span class="opt">(optional)</span></label>
+          <textarea id="c-message" name="message" aria-describedby="c-message-hint"></textarea>
+          <span class="field-hint" id="c-message-hint">A sentence or two is plenty.</span>
+        </div>
+
+        <button class="button button-primary" type="submit">Send message</button>
+        <p class="form-status" role="status" aria-live="polite" hidden data-form-status></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div style="display:grid;gap:10px">
+      <strong>Aurora Care by Ragaven</strong>
+      <p class="safety-line">Aurora Care helps families notice changes and follow up sooner. It does not diagnose, treat, or replace a doctor or 911.</p>
+      <span class="muted">© 2026 Ragaven</span>
+    </div>
+    <nav class="footer-links" aria-label="Product">
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="product.html">Product</a>
+      <a href="families.html">For families</a>
+      <a href="for-yourself.html">For older adults</a>
+      <a href="care-teams.html">For care teams</a>
+    </nav>
+    <nav class="footer-links" aria-label="Company">
+      <a href="about.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html?topic=organization">Business inquiries</a>
+      <a href="trust.html">Trust &amp; privacy</a>
+      <a href="privacy.html">Privacy policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
 </html>
