@@ -1,101 +1,707 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aurora by Ragaven | Connected Care for Aging Adults</title>
-    <meta name="description" content="Aurora helps aging adults, families, and professional caregivers see scattered health warning signs and turn everyday check-ins into informed care action.">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body class="problem-home">
-    <header class="site-header">
-      <a class="brand" href="index.html">
-        <img src="assets/aurora-logo.png" alt="Aurora logo">
-        <span>Aurora <small>by Ragaven</small></span>
-      </a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a aria-current="page" href="index.html">Home</a>
-        <a href="overview.html">Overview</a>
-        <a href="personas.html">Personas</a>
-        <a href="star-features.html">Star Features</a>
-        <a href="angel-features.html">Angel Features</a>
-        <a href="care-intelligence.html">Aurora Intelligence</a>
-        
-        <a href="team.html">Team</a>
-        <a class="nav-cta" href="contact.html">Contact</a>
-      </nav>
-    </header>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Aurora Care by Ragaven | A phone app for older adults and their families</title>
+<meta name="description" content="Aurora Care is a phone app for older adults and their families. A 30-second check shows how today compares with your usual, shared with the people you choose.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: mobile-first single column; hero splits copy / product+photo at 960px; dawn band only behind the hero. */
+:root {
+  --bg: #fafbf8;
+  --surface: #ffffff;
+  --surface-2: #eef5f1;
+  --ink: #132c2b;
+  --ink-2: #3a5553;
+  --line: #cfdcd6;
+  --accent: #0a5f59;
+  --accent-ink: #ffffff;
+  --accent-soft: #d9ece7;
+  --dawn-1: #fdeee2;
+  --dawn-2: #e6f3ee;
+  --pending-bg: #fff4d6;
+  --pending-ink: #6b4a00;
+  --pending-line: #c99a22;
+  --phone: #0c1018;
+  --shadow: 0 18px 50px rgba(19, 44, 43, 0.14);
+  --font: "Atkinson Hyperlegible Next", "Atkinson Hyperlegible", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --max: 1160px;
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f1716; --surface: #15201f; --surface-2: #1b2928; --ink: #eaf3f0; --ink-2: #b8ccc7;
+    --line: #2d403e; --accent: #5fd0c3; --accent-ink: #062523; --accent-soft: #1d3a37;
+    --dawn-1: #2a1f1a; --dawn-2: #12231f; --pending-bg: #3a2e10; --pending-ink: #ffe29a; --pending-line: #a37a14;
+    --shadow: 0 18px 50px rgba(0, 0, 0, 0.45); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f1716; --surface: #15201f; --surface-2: #1b2928; --ink: #eaf3f0; --ink-2: #b8ccc7;
+  --line: #2d403e; --accent: #5fd0c3; --accent-ink: #062523; --accent-soft: #1d3a37;
+  --dawn-1: #2a1f1a; --dawn-2: #12231f; --pending-bg: #3a2e10; --pending-ink: #ffe29a; --pending-line: #a37a14;
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45); color-scheme: dark;
+}
 
-    <main>
-      <section class="problem-hero home-hero-simple">
-        <div class="wrap home-hero-grid">
-          <div class="problem-hero-copy">
-            <p class="eyebrow">Aurora by Ragaven</p>
-            <h1>Care between check-ins.</h1>
-            <p class="lead">Aurora helps Stars and trusted Angels spot meaningful change earlier and coordinate the next care step.</p>
-            <div class="button-row">
-              <a class="button primary" href="overview.html">See how Aurora works</a>
-              <a class="button secondary" href="personas.html">Meet Stars and Angels</a>
-            </div>
-          </div>
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font); font-size: 1.1875rem; line-height: 1.6;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 6px;
+}
+h1, h2, h3 { line-height: 1.15; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.25rem, 6vw, 3.6rem); font-weight: 800; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; }
+h3 { font-size: 1.3rem; font-weight: 700; }
+p { margin: 0; }
+.wrap { width: 100%; max-width: var(--max); margin-inline: auto; padding-inline: 16px; }
+@media (min-width: 720px) { .wrap { padding-inline: 32px; } }
+.section { padding-block: 64px; }
+.section-head { display: grid; gap: 12px; max-width: 46rem; margin-bottom: 32px; }
+.eyebrow { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+.lead { font-size: 1.25rem; color: var(--ink-2); max-width: 40rem; }
+.muted { color: var(--ink-2); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: 16px; top: -60px; background: var(--accent); color: var(--accent-ink); padding: 10px 16px; border-radius: 8px; z-index: 50; }
+.skip-link:focus { top: 12px; }
 
-          <div class="home-hero-card">
-            <img src="assets/aurora-logo.png" alt="">
-            <strong>Signals become action</strong>
-            <span>Vitals, labs, meds, routines, and updates in one care picture.</span>
+/* Pending markers: visible review flags for copy that needs legal sign-off or a decision */
+.pending {
+  display: inline-block; background: var(--pending-bg); color: var(--pending-ink);
+  border: 1.5px dashed var(--pending-line); border-radius: 6px;
+  padding: 1px 8px; font-size: 0.85em; font-weight: 700; letter-spacing: 0.02em;
+}
+.review-bar { background: var(--pending-bg); color: var(--pending-ink); border-bottom: 1.5px dashed var(--pending-line); font-size: 1rem; }
+.review-bar .wrap { padding-block: 10px; }
+
+/* Buttons */
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 52px; padding: 12px 24px; border-radius: 999px;
+  font: inherit; font-weight: 700; font-size: 1.1rem; text-decoration: none; cursor: pointer;
+  border: 2px solid transparent;
+}
+.button-primary { background: var(--accent); color: var(--accent-ink); }
+.button-primary:hover { filter: brightness(1.08); }
+.button-secondary { background: transparent; color: var(--accent); border-color: var(--accent); }
+.button-secondary:hover { background: var(--accent-soft); }
+.button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Header */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
+.brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; }
+.brand img { width: 40px; height: 40px; border-radius: 10px; }
+.brand strong { display: block; font-size: 1.15rem; line-height: 1.1; }
+.brand small { display: block; font-size: 0.85rem; color: var(--ink-2); }
+.site-nav { display: none; }
+.site-nav a { color: var(--ink); text-decoration: none; font-weight: 600; font-size: 1rem; padding: 10px 4px; min-height: 44px; display: inline-flex; align-items: center; }
+.site-nav a:hover { color: var(--accent); }
+.header-cta { display: none; }
+.menu-button {
+  min-width: 48px; min-height: 48px; border-radius: 12px; border: 1.5px solid var(--line);
+  background: var(--surface); color: var(--ink); font: inherit; font-weight: 700; font-size: 1rem; padding: 0 14px; cursor: pointer;
+}
+.mobile-nav { border-top: 1px solid var(--line); padding-block: 8px 16px; display: grid; gap: 4px; }
+.mobile-nav a { color: var(--ink); text-decoration: none; font-weight: 600; min-height: 48px; display: flex; align-items: center; }
+.mobile-nav .button { margin-top: 8px; color: var(--accent-ink); }
+@media (min-width: 1040px) {
+  .site-nav { display: flex; gap: 22px; }
+  .header-cta { display: inline-flex; min-height: 48px; padding: 10px 20px; font-size: 1rem; }
+  .menu-button, .mobile-nav { display: none !important; }
+}
+
+/* Hero */
+.hero { background: linear-gradient(180deg, var(--dawn-1) 0%, var(--dawn-2) 70%, var(--bg) 100%); }
+.hero-grid { display: grid; gap: 40px; padding-block: 40px 56px; align-items: center; }
+@media (min-width: 960px) { .hero-grid { grid-template-columns: 1.05fr 1fr; padding-block: 64px 80px; } }
+.hero-copy { display: grid; gap: 20px; min-width: 0; }
+.hero-what { font-size: 1.05rem; font-weight: 700; color: var(--ink-2); }
+.hero-sub { font-size: 1.3rem; color: var(--ink-2); max-width: 34rem; }
+.reassure { display: grid; gap: 6px; font-size: 1.05rem; }
+.reassure strong { color: var(--ink); }
+.availability { font-size: 1rem; color: var(--ink-2); }
+.hero-visual { position: relative; min-width: 0; padding-bottom: 24px; }
+.photo-slot {
+  aspect-ratio: 4 / 3; width: 100%; max-width: 100%; border-radius: 22px; overflow: hidden;
+  background: repeating-linear-gradient(135deg, var(--surface-2) 0 14px, var(--surface) 14px 28px);
+  border: 2px dashed var(--pending-line); display: grid; place-items: center; padding: 24px 24px 24px 24px;
+}
+.photo-slot .slot-note { max-width: 22rem; font-size: 0.95rem; color: var(--ink-2); display: grid; gap: 8px; }
+@media (min-width: 560px) { .photo-slot { place-items: center start; } .photo-slot .slot-note { max-width: 58%; } }
+.hero-phone {
+  position: absolute; right: 4%; bottom: 0; width: clamp(96px, 28%, 200px);
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.28));
+}
+.hero-phone figcaption { font-size: 0.8rem; text-align: center; color: var(--ink-2); margin-top: 6px; background: var(--bg); border-radius: 6px; padding: 2px 4px; }
+
+/* Routing */
+.routing { padding-block: 48px; }
+.route-grid { display: grid; gap: 16px; }
+@media (min-width: 760px) { .route-grid { grid-template-columns: repeat(3, 1fr); } }
+.route-card {
+  display: grid; gap: 8px; padding: 22px; border-radius: var(--radius); background: var(--surface);
+  border: 1.5px solid var(--line); color: var(--ink); text-decoration: none; min-height: 44px;
+}
+.route-card:hover { border-color: var(--accent); }
+.route-card strong { font-size: 1.25rem; }
+.route-card span { color: var(--ink-2); font-size: 1.05rem; }
+.route-card .go { color: var(--accent); font-weight: 700; }
+.org-link { margin-top: 20px; font-size: 1.05rem; }
+
+/* Benefits */
+.benefits { background: var(--surface); border-block: 1px solid var(--line); }
+.benefit-grid { display: grid; gap: 28px; }
+@media (min-width: 640px) { .benefit-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .benefit-grid { grid-template-columns: repeat(4, 1fr); } }
+.benefit { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.benefit-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--accent-soft); display: grid; place-items: center; }
+.benefit-icon svg { width: 30px; height: 30px; stroke: var(--accent); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.benefit p { color: var(--ink-2); }
+.benefit .limit { font-size: 1rem; }
+.benefit a { font-weight: 700; min-height: 44px; display: inline-flex; align-items: center; }
+
+/* Walkthrough */
+.steps { display: grid; gap: 24px; counter-reset: step; }
+@media (min-width: 960px) { .steps { grid-template-columns: repeat(3, 1fr); } }
+.step { display: grid; gap: 16px; align-content: start; background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); padding: 22px; min-width: 0; }
+.step-num { font-weight: 800; color: var(--accent); font-size: 1rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.who { display: grid; gap: 6px; font-size: 1.02rem; }
+.who dt { font-weight: 700; }
+.who dd { margin: 0 0 8px; color: var(--ink-2); }
+.screen {
+  background: var(--phone); color: #e9eef5; border-radius: 22px; padding: 18px 16px; font-size: 0.95rem;
+  display: grid; gap: 10px; max-width: 300px; width: 100%; margin-inline: auto; border: 6px solid #1e2533;
+}
+.screen-title { font-weight: 700; font-size: 1rem; text-align: center; color: #ffffff; }
+.screen-row { background: #1c2333; border-radius: 12px; padding: 10px 12px; display: grid; gap: 2px; }
+.screen-row small { color: #a9b4c6; font-size: 0.8rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.screen-row b { color: #ffffff; font-size: 1.05rem; }
+.screen-row.flag { border-left: 4px solid #f2b84b; }
+.screen-btn { background: #23c4e6; color: #04121a; border-radius: 999px; text-align: center; padding: 8px; font-weight: 700; }
+.screen-step img { max-width: 220px; margin-inline: auto; }
+.demo-tag { font-size: 0.85rem; text-align: center; color: var(--ink-2); }
+.walk-note { margin-top: 24px; padding: 18px 20px; border-radius: var(--radius); background: var(--accent-soft); font-size: 1.05rem; max-width: 60rem; }
+.video-row { display: grid; gap: 20px; margin-top: 36px; align-items: center; }
+@media (min-width: 860px) { .video-row { grid-template-columns: 1fr 1fr; } }
+.video-row video { width: 100%; border-radius: var(--radius); background: #000; }
+
+/* Credibility + testimonials */
+.cred-grid, .quote-grid { display: grid; gap: 16px; }
+@media (min-width: 760px) { .cred-grid { grid-template-columns: repeat(2, 1fr); } .quote-grid { grid-template-columns: repeat(3, 1fr); } }
+.cred, .quote { padding: 22px; border-radius: var(--radius); border: 1.5px solid var(--line); background: var(--surface); display: grid; gap: 10px; align-content: start; }
+.proof-strip { margin-top: 16px; min-height: 88px; border: 2px dashed var(--pending-line); border-radius: var(--radius); display: grid; place-items: center; padding: 16px; text-align: center; }
+.quote { min-height: 180px; border-style: dashed; border-color: var(--pending-line); }
+.quote p { color: var(--ink-2); font-size: 1rem; }
+
+/* FAQ + trust */
+.faq { display: grid; gap: 12px; max-width: 52rem; }
+details { background: var(--surface); border: 1.5px solid var(--line); border-radius: var(--radius); }
+summary { cursor: pointer; padding: 16px 20px; min-height: 56px; font-weight: 700; font-size: 1.15rem; list-style-position: outside; }
+details[open] summary { border-bottom: 1px solid var(--line); }
+details .answer { padding: 16px 20px 20px; display: grid; gap: 10px; color: var(--ink-2); }
+.trust { background: var(--surface); border-block: 1px solid var(--line); }
+.trust-grid { display: grid; gap: 24px; }
+@media (min-width: 760px) { .trust-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
+.trust-item { display: grid; gap: 8px; align-content: start; }
+.trust-item p { color: var(--ink-2); }
+.limits { margin-top: 32px; padding: 20px; border-radius: var(--radius); border: 1.5px solid var(--line); background: var(--bg); max-width: 60rem; }
+
+/* Org band */
+.org-band { display: grid; gap: 16px; padding: 28px; border-radius: var(--radius); background: var(--surface-2); align-items: center; }
+@media (min-width: 860px) { .org-band { grid-template-columns: 1fr auto; } }
+
+/* Signup */
+.signup { background: linear-gradient(180deg, var(--bg), var(--dawn-1)); }
+.signup-grid { display: grid; gap: 32px; }
+@media (min-width: 900px) { .signup-grid { grid-template-columns: 1fr 1fr; align-items: start; } }
+.signup-form { display: grid; gap: 20px; background: var(--surface); border: 1.5px solid var(--line); border-radius: 20px; padding: 24px; box-shadow: var(--shadow); }
+.field { display: grid; gap: 6px; }
+.field label, legend { font-weight: 700; font-size: 1.1rem; }
+.req, .opt { font-weight: 400; color: var(--ink-2); font-size: 0.95rem; }
+input[type="email"] {
+  width: 100%; min-height: 56px; padding: 12px 14px; font: inherit; font-size: 1.15rem;
+  border: 2px solid var(--line); border-radius: 12px; background: var(--bg); color: var(--ink);
+}
+input[type="email"][aria-invalid="true"] { border-color: #b3261e; }
+.field-error { color: #b3261e; font-weight: 700; font-size: 1rem; }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
+.choice { display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 6px 12px; border: 1.5px solid var(--line); border-radius: 12px; cursor: pointer; }
+.choice input { width: 22px; height: 22px; accent-color: var(--accent); }
+.form-status { border-radius: 12px; padding: 14px 16px; background: var(--pending-bg); color: var(--pending-ink); border: 1.5px dashed var(--pending-line); font-size: 1rem; }
+.next-steps { display: grid; gap: 12px; }
+.next-steps ol { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; color: var(--ink-2); }
+.contact-box { padding: 18px 20px; border-radius: var(--radius); border: 1.5px solid var(--line); background: var(--surface); display: grid; gap: 6px; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); padding-block: 40px; font-size: 1rem; }
+.footer-grid { display: grid; gap: 24px; }
+@media (min-width: 860px) { .footer-grid { grid-template-columns: 1.4fr 1fr 1fr; } }
+.footer-links { display: grid; gap: 4px; }
+.footer-links a { color: var(--ink); min-height: 44px; display: flex; align-items: center; }
+.safety-line { color: var(--ink-2); max-width: 34rem; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="review-bar" role="note">
+  <div class="wrap"><strong>Preview for review, not live.</strong> Amber tags mark copy that needs legal wording, a permission, or a decision before launch. Audience and feature links go to the current pages, which still need the same plain-language update.</div>
+</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Aurora Care by Ragaven, home">
+      <img src="assets/aurora-logo.png" alt="" width="40" height="40">
+      <span><strong>Aurora Care</strong><small>by Ragaven</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#how-it-works">How it works</a>
+      <a href="angel-features.html">For families</a>
+      <a href="star-features.html">For older adults</a>
+      <a href="personas.html">For care teams</a>
+      <a href="#trust">Trust &amp; privacy</a>
+    </nav>
+    <a class="button button-primary header-cta" href="#signup">Get launch updates</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" data-menu>Menu</button>
+  </div>
+  <nav class="wrap mobile-nav" id="mobile-nav" aria-label="Main, mobile" hidden data-mobile-nav>
+    <a href="#how-it-works">How it works</a>
+    <a href="angel-features.html">For families</a>
+    <a href="star-features.html">For older adults</a>
+    <a href="personas.html">For care teams</a>
+    <a href="#trust">Trust &amp; privacy</a>
+    <a class="button button-primary" href="#signup">Get launch updates</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="hero-what">A phone app for older adults and their families</p>
+        <h1 id="hero-title">Mom says she's fine. Now you can both see it.</h1>
+        <p class="hero-sub">A 30-second check on her own phone shows how she's doing compared with her usual. She chooses who sees it.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="#signup" data-launch-cta>Get launch updates</a>
+          <a class="button button-secondary" href="#how-it-works">See a family example</a>
+        </div>
+        <div class="reassure">
+          <strong>No extra device. She decides who sees what.</strong>
+          <span class="availability">Coming to iPhone at the end of October 2026. <a href="#questions">Pricing, setup, and who can use it</a></span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="photo-slot" role="img" aria-label="Photo to come: a daughter with her mother and father at home">
+          <div class="slot-note">
+            <span class="pending">PHOTO TO COME</span>
+            <span>Daughter in her 40s or 50s kneels beside Mom, who is seated and looks okay, a little tired. Dad stands behind with a hand on her shoulder. Mom holds her own phone. Warm, calm, smiling. Soft daylight. No medical equipment. Keep the right side clear for the phone.</span>
           </div>
         </div>
-      </section>
+        <figure class="hero-phone">
+          <img src="assets/home/capture-completed.webp" alt="Aurora Care app screen after a 30-second check, showing heart rate, breathing rate, blood pressure, and oxygen readings" width="420" height="880">
+          <figcaption>App screen, demo data</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
 
-      <section class="section home-video-section">
-        <div class="wrap split home-video-wrap">
-          <div>
-            <p class="eyebrow">One-minute overview</p>
-            <h2>Connected care, simply.</h2>
-            <p class="lead">Daily signals, camera vitals, and Angel updates in one clearer loop.</p>
+  <!-- 2. AUDIENCE ROUTING -->
+  <section class="routing" aria-labelledby="route-title">
+    <div class="wrap">
+      <h2 id="route-title" class="visually-hidden">Find what fits you</h2>
+      <div class="route-grid">
+        <a class="route-card" href="angel-features.html">
+          <strong>I'm supporting a parent</strong>
+          <span>See how she's doing between calls, and coordinate with family.</span>
+          <span class="go">For families</span>
+        </a>
+        <a class="route-card" href="star-features.html">
+          <strong>I'm organizing my own care</strong>
+          <span>Stay in charge of your health, and bring in the people you choose.</span>
+          <span class="go">Using Aurora Care yourself</span>
+        </a>
+        <a class="route-card" href="personas.html">
+          <strong>I'm a professional caregiver</strong>
+          <span>Share one picture with the family and make handoffs simpler.</span>
+          <span class="go">For care teams</span>
+        </a>
+      </div>
+      <p class="org-link">For care communities and organizations: <a href="#organizations">register organizational interest</a></p>
+    </div>
+  </section>
+
+  <!-- 3. FOUR BENEFITS -->
+  <section class="section benefits" id="benefits" aria-labelledby="benefits-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What Aurora Care does</p>
+        <h2 id="benefits-title">Simple for her. Clear for the family.</h2>
+      </div>
+      <div class="benefit-grid">
+        <article class="benefit">
+          <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M7 20c0-3 2.2-5 5-5s5 2 5 5"/><path d="M2 19c0-2 1.3-3.5 3-3.5"/><path d="M22 19c0-2-1.3-3.5-3-3.5"/></svg></div>
+          <h3>Easy to use, with a care circle you choose</h3>
+          <p>It works on the phone you already have. Your care circle is the family and caregivers you invite, and you decide what each person sees.</p>
+          <a href="star-features.html">Learn more<span class="visually-hidden"> about the care circle</span></a>
+        </article>
+        <article class="benefit">
+          <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M8.5 13h2l1.2-3 1.6 5 1.2-2H16"/></svg></div>
+          <h3>Vitals and trends from a 30-second check</h3>
+          <p>A quick camera check on your phone shows how today's vitals compare with your own usual, so changes are easier to notice.</p>
+          <a href="star-features.html">Learn more<span class="visually-hidden"> about the 30-second check</span></a>
+        </article>
+        <article class="benefit">
+          <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v4"/></svg></div>
+          <h3>Talk to your phone for immediate help</h3>
+          <p>Say your help phrase and the people in your care circle get an alert right away. Your phone needs to be close enough to hear you.</p>
+          <a href="angel-features.html">Learn more<span class="visually-hidden"> about voice help</span></a>
+        </article>
+        <article class="benefit">
+          <div class="benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><path d="M10 12h5M10 15h5M10 18h3"/></svg></div>
+          <h3>Vitals, labs, and medicines in one place, ready for visits</h3>
+          <p>Vitals, labs, medicines, reminders, and alerts sit together, with a report you can bring to doctor and lab visits.</p>
+          <a href="overview.html">Learn more<span class="visually-hidden"> about the visit report</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW IT WORKS: ONE FAMILY EXAMPLE -->
+  <section class="section" id="how-it-works" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-title">One week with the Okafor family</h2>
+        <p class="lead">Grace, 74, lives on her own. Her daughter Nia lives two hours away. This is an example with demonstration data.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <p class="step-num">Step 1 · Grace</p>
+          <h3>Grace does her 30-second check</h3>
+          <div class="screen-step">
+            <img src="assets/home/capture-idle.webp" alt="Aurora Care check screen asking her to place her face in the oval, with a Start button" width="420" height="880" loading="lazy">
+            <p class="demo-tag">App screen, demo data</p>
           </div>
-          <div class="video-shell">
-            <video controls poster="assets/aurora-one-minute-poster.jpg">
-              <source src="assets/aurora-one-minute.mp4" type="video/mp4">
-            </video>
+          <dl class="who">
+            <dt>What Grace does</dt>
+            <dd>Opens the app each morning, looks at the camera, and taps Start.</dd>
+            <dt>What happens on its own</dt>
+            <dd>Aurora Care compares her readings with her own usual and saves them with her medicines and reminders.</dd>
+          </dl>
+        </article>
+
+        <article class="step">
+          <p class="step-num">Step 2 · Nia</p>
+          <h3>Nia sees what Grace chose to share</h3>
+          <div class="screen" aria-label="Illustration of the update Nia sees">
+            <p class="screen-title">Grace · this week</p>
+            <div class="screen-row flag"><small>Blood pressure</small><b>Above her usual on 4 of 7 days</b></div>
+            <div class="screen-row"><small>Evening medicine</small><b>Missed 2 days</b></div>
+            <div class="screen-row"><small>Last check</small><b>Today, 8:12 am</b></div>
           </div>
+          <p class="demo-tag">Illustrative preview, demo data <span class="pending">CONFIRM MATCHES APP</span></p>
+          <dl class="who">
+            <dt>What Nia does</dt>
+            <dd>Reads the update when it arrives. She sees only what Grace allowed.</dd>
+            <dt>What happens on its own</dt>
+            <dd>People in Grace's care circle get an update when something changes from her usual.</dd>
+          </dl>
+        </article>
+
+        <article class="step">
+          <p class="step-num">Step 3 · Together</p>
+          <h3>They talk it through and plan a visit</h3>
+          <div class="screen" aria-label="Illustration of the visit report">
+            <p class="screen-title">Report for Dr. Lee</p>
+            <div class="screen-row"><small>Covers</small><b>Last 30 days</b></div>
+            <div class="screen-row"><small>Includes</small><b>Vitals, medicines, recent labs</b></div>
+            <p class="screen-btn">Share report</p>
+          </div>
+          <p class="demo-tag">Illustrative preview, demo data <span class="pending">CONFIRM MATCHES APP</span></p>
+          <dl class="who">
+            <dt>What they do</dt>
+            <dd>Nia calls with the trend in hand. Grace books her doctor and brings the report.</dd>
+            <dt>What Aurora Care does not do</dt>
+            <dd>It doesn't diagnose anything or tell Grace what to do. The next step is theirs.</dd>
+          </dl>
+        </article>
+      </div>
+
+      <p class="walk-note"><strong>What Grace has to do:</strong> one short check a day, and say her help phrase if she needs someone. Everything else, from comparing with her usual to updating her care circle, happens on its own.</p>
+
+      <div class="video-row">
+        <div>
+          <h3>Prefer to watch?</h3>
+          <p class="muted">The one-minute overview shows the same steps. Everything in the video is also described above, so you don't need to play it.</p>
         </div>
-      </section>
+        <video controls preload="none" poster="assets/aurora-one-minute-poster.jpg" aria-label="One-minute overview of Aurora Care">
+          <source src="assets/aurora-one-minute.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
 
-      <section class="section home-basics-section">
-        <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">The basics</p>
-            <h2>What Aurora does.</h2>
-          </div>
-          <div class="card-grid">
-            <article class="feature-card"><div class="icon">1</div><h3>Observe</h3><p>Bring vitals, labs, meds, routines, symptoms, and visits into one care picture.</p></article>
-            <article class="feature-card"><div class="icon">2</div><h3>Understand</h3><p>Compare signals against the Star's baseline so change is easier to see.</p></article>
-            <article class="feature-card"><div class="icon">3</div><h3>Act</h3><p>Share clear updates so Angels know when to follow up.</p></article>
-          </div>
+  <!-- 5. CREDIBILITY -->
+  <section class="section" aria-labelledby="cred-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Why you can trust it</p>
+        <h2 id="cred-title">Built with care for health information</h2>
+      </div>
+      <div class="cred-grid">
+        <div class="cred">
+          <h3>About the 30-second check</h3>
+          <p><span class="pending">FDA STATEMENT · CLAIM PENDING LEGAL WORDING</span></p>
         </div>
-      </section>
-
-      <section class="section closing-section">
-        <div class="wrap closing-band">
-          <div>
-            <p class="eyebrow">Start with the right view</p>
-            <h2>Explore the care circle.</h2>
-            <p>See how Stars and Angels use Aurora.</p>
-          </div>
-          <div class="button-row">
-            <a class="button primary" href="overview.html">Overview</a>
-            <a class="button secondary" href="star-features.html">Star Features</a>
-            <a class="button secondary" href="angel-features.html">Angel Features</a>
-          </div>
+        <div class="cred">
+          <h3>How health information is protected</h3>
+          <p><span class="pending">HIPAA STATEMENT · CLAIM PENDING LEGAL WORDING</span></p>
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="proof-strip" aria-label="Reserved for future proof points"><span class="pending">RESERVED: FUTURE PROOF STRIP (USER NUMBERS, PRESS). LEAVE EMPTY UNTIL REAL.</span></div>
+      <p class="org-link">Why we built Aurora Care: <a href="team.html">read the founder's story</a></p>
+    </div>
+  </section>
 
-    <footer class="site-footer">
-      <span>&copy; 2026 Ragaven</span>
-      <span>Aurora keeps care connected.</span>
-      <a href="privacy.html">Privacy</a>
-    </footer>
-  </body>
+  <!-- 6. TESTIMONIALS -->
+  <section class="section" style="padding-top:0" aria-labelledby="quotes-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="quotes-title">From families in the beta</h2>
+      </div>
+      <div class="quote-grid">
+        <figure class="quote" style="margin:0"><span class="pending">BETA QUOTE, PERMISSION PENDING</span><p>Name, relationship, and city with written permission.</p></figure>
+        <figure class="quote" style="margin:0"><span class="pending">BETA QUOTE, PERMISSION PENDING</span><p>Name, relationship, and city with written permission.</p></figure>
+        <figure class="quote" style="margin:0"><span class="pending">BETA QUOTE, PERMISSION PENDING</span><p>Name, relationship, and city with written permission.</p></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. PRACTICAL QUESTIONS -->
+  <section class="section" id="questions" aria-labelledby="faq-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Before you sign up</p>
+        <h2 id="faq-title">Questions families ask first</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Can I use it now?</summary>
+          <div class="answer">
+            <p>Not yet. Aurora Care comes to the App Store for iPhone at the end of October 2026. Get launch updates and we'll email you the day it's available.</p>
+            <p>Countries at launch: <span class="pending">PENDING DECISION</span> Android: <span class="pending">PENDING DECISION</span></p>
+          </div>
+        </details>
+        <details>
+          <summary>What does it cost?</summary>
+          <div class="answer">
+            <p>Pricing isn't set yet. When it is, we'll publish it here and email launch-list subscribers, including who's included, how billing works, and how to cancel.</p>
+            <p><span class="pending">PENDING: PRICING AND DATE IT WILL BE SHARED</span></p>
+          </div>
+        </details>
+        <details>
+          <summary>Will my parent actually use it?</summary>
+          <div class="answer">
+            <p>Setup is done once on her phone. Sign-in uses her phone number, with no password to remember. After that, her daily part is one 30-second check. Large text and big buttons are built in, and you can set it up together on your next visit.</p>
+            <p><span class="pending">PENDING: CONFIRM SETUP HELP OFFERED AT LAUNCH (PHONE, CHAT, GUIDE)</span></p>
+          </div>
+        </details>
+        <details>
+          <summary>What phone or equipment do we need?</summary>
+          <div class="answer">
+            <p>An iPhone 13 or newer. No watch, cuff, or other device is required. People in the care circle get updates on their own phone. <span class="pending">CONFIRM: APP ONLY, OR WEB TOO</span></p>
+          </div>
+        </details>
+        <details>
+          <summary>What will family members see?</summary>
+          <div class="answer">
+            <p>Only what she chooses. For each person she can decide, for example, whether they see vitals and trends, medicines and missed doses, labs, and appointments. She can change or remove access at any time.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What if she misses a check?</summary>
+          <div class="answer">
+            <p>Her care circle can see when her last check was, so a quiet day is visible without a phone call.</p>
+            <p><span class="pending">PENDING: CONFIRM WHETHER A MISSED CHECK SENDS A NOTIFICATION</span></p>
+          </div>
+        </details>
+        <details>
+          <summary>Who responds when she asks for help?</summary>
+          <div class="answer">
+            <p>The people in her care circle. When she says her help phrase, they get an alert on their phones. No one at Ragaven responds, and Aurora Care does not call 911. In a medical crisis, call 911.</p>
+            <p>Voice help works only when her phone is close enough to hear her. <span class="pending">PENDING: CONFIRM RE-ALERT BEHAVIOR WHEN NO ONE RESPONDS</span></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. TRUST & PRIVACY -->
+  <section class="section trust" id="trust" aria-labelledby="trust-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Trust &amp; privacy</p>
+        <h2 id="trust-title">Her information, her choice</h2>
+        <p class="lead">Choosing who in the family sees what is one part of privacy. How Ragaven stores and handles the information is the other. Here is how both work.</p>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-item"><h3>What Aurora Care collects</h3><p>Results of her checks, plus the labs, medicines, appointments, and notes she imports or enters.</p></div>
+        <div class="trust-item"><h3>How her care circle gets access</h3><p>She invites each person. They see only what she allows for them, nothing more.</p></div>
+        <div class="trust-item"><h3>Changing or stopping sharing</h3><p>She can change what someone sees, or remove them, at any time in the app. She can also download or delete her information.</p></div>
+        <div class="trust-item"><h3>Camera, microphone, and location</h3><p>The camera is used for the 30-second check and a quick face check that the reading is hers. The microphone is used for her help phrase. Location is shared with her care circle when she asks for help. <span class="pending">CONFIRM WITH PRODUCT</span></p></div>
+        <div class="trust-item"><h3>Where information is stored</h3><p><span class="pending">STORAGE AND PROCESSORS · CLAIM PENDING LEGAL WORDING</span></p></div>
+        <div class="trust-item"><h3>Getting help with her information</h3><p>Questions about her data: <span class="pending">PENDING: PRIVACY CONTACT ADDRESS</span> <a href="privacy.html">Read the privacy policy</a></p></div>
+      </div>
+      <p class="limits"><strong>What Aurora Care is not.</strong> Aurora Care helps families notice changes and follow up sooner. It does not diagnose, treat, or replace a doctor, and it does not replace calling 911.</p>
+    </div>
+  </section>
+
+  <!-- 9. ORGANIZATIONS -->
+  <section class="section" id="organizations" aria-labelledby="org-title" style="padding-bottom:0">
+    <div class="wrap">
+      <div class="org-band">
+        <div>
+          <h2 id="org-title" style="font-size:1.5rem">For care communities and organizations</h2>
+          <p class="muted">Interested in offering Aurora Care to residents or staff? Tell us about your organization and we'll follow up.</p>
+        </div>
+        <a class="button button-secondary" href="contact.html?topic=organization">Register organizational interest</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. FINAL CTA + SIGNUP + CONTACT -->
+  <section class="section signup" id="signup" aria-labelledby="signup-title">
+    <div class="wrap signup-grid">
+      <div class="next-steps">
+        <p class="eyebrow">Launching end of October 2026</p>
+        <h2 id="signup-title">Be the first to know when Aurora Care is ready</h2>
+        <p class="lead">Leave your email. That's all we need.</p>
+        <h3>What happens next</h3>
+        <ol>
+          <li>We email you to confirm your address.</li>
+          <li>You get a few short updates before launch, including pricing.</li>
+          <li>On launch day, you get the App Store link.</li>
+        </ol>
+        <p class="muted">You can unsubscribe at any time. <a href="privacy.html">Privacy policy</a></p>
+        <div class="contact-box">
+          <strong>Have a question first?</strong>
+          <span class="muted">Email <span class="pending">PENDING: PUBLIC CONTACT EMAIL</span> or <a href="contact.html">contact us</a>.</span>
+        </div>
+      </div>
+
+      <form class="signup-form" id="launch-form" novalidate data-endpoint="">
+        <div class="field">
+          <label for="signup-email">Email <span class="req">(required)</span></label>
+          <input id="signup-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error">
+          <span class="field-error" id="email-error" hidden>Enter an email address like name@example.com.</span>
+        </div>
+        <fieldset>
+          <legend>Who are you exploring Aurora Care for? <span class="opt">(optional)</span></legend>
+          <label class="choice" for="for-parent"><input type="radio" id="for-parent" name="exploring_for" value="parent"> A parent or family member</label>
+          <label class="choice" for="for-self"><input type="radio" id="for-self" name="exploring_for" value="self"> I'm exploring Aurora Care for myself</label>
+          <label class="choice" for="for-pro"><input type="radio" id="for-pro" name="exploring_for" value="professional"> People I care for professionally</label>
+        </fieldset>
+        <button class="button button-primary" type="submit">Get launch updates</button>
+        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div style="display:grid;gap:10px">
+      <strong>Aurora Care by Ragaven</strong>
+      <p class="safety-line">Aurora Care helps families notice changes and follow up sooner. It does not diagnose, treat, or replace a doctor or 911.</p>
+      <span class="muted">© 2026 Ragaven</span>
+    </div>
+    <nav class="footer-links" aria-label="Product">
+      <a href="#how-it-works">How it works</a>
+      <a href="angel-features.html">For families</a>
+      <a href="star-features.html">For older adults</a>
+      <a href="personas.html">For care teams</a>
+    </nav>
+    <nav class="footer-links" aria-label="Company">
+      <a href="team.html">About</a>
+      <a href="team.html">Team</a>
+      <a href="contact.html?topic=organization">Business inquiries</a>
+      <a href="#trust">Trust &amp; privacy</a>
+      <a href="privacy.html">Privacy policy</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var menu = document.querySelector("[data-menu]");
+  var mnav = document.querySelector("[data-mobile-nav]");
+  if (menu && mnav) {
+    menu.addEventListener("click", function () {
+      var open = mnav.hidden;
+      mnav.hidden = !open;
+      menu.setAttribute("aria-expanded", String(open));
+      menu.textContent = open ? "Close" : "Menu";
+    });
+    mnav.addEventListener("click", function (e) {
+      if (e.target.closest("a")) { mnav.hidden = true; menu.setAttribute("aria-expanded", "false"); menu.textContent = "Menu"; }
+    });
+  }
+
+  var form = document.getElementById("launch-form");
+  if (!form) return;
+  var email = document.getElementById("signup-email");
+  var err = document.getElementById("email-error");
+  var status = document.getElementById("form-status");
+  var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function check() {
+    var ok = pattern.test(email.value.trim());
+    email.setAttribute("aria-invalid", ok ? "false" : "true");
+    err.hidden = ok;
+    return ok;
+  }
+  email.addEventListener("blur", function () { if (email.value) check(); });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!check()) { email.focus(); return; }
+    var endpoint = form.getAttribute("data-endpoint");
+    status.hidden = false;
+    if (!endpoint) {
+      // No signup service is connected yet. Say so plainly; never show a false confirmation.
+      status.textContent = "Preview only: the signup list isn't connected yet, so nothing was sent. Your entries are kept on this page.";
+      return;
+    }
+    status.textContent = "Sending...";
+    var data = new FormData(form);
+    fetch(endpoint, { method: "POST", body: data })
+      .then(function (r) {
+        if (!r.ok) throw new Error(String(r.status));
+        status.textContent = "Thanks. Check your inbox for an email to confirm your address.";
+        form.reset();
+      })
+      .catch(function () {
+        status.textContent = "We couldn't sign you up just now. Your email is still filled in, so please try again in a minute.";
+      });
+  });
+})();
+</script>
+</body>
 </html>
