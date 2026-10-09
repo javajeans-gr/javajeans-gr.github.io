@@ -123,7 +123,7 @@ p { margin: 0; }
 .hero-visual { position: relative; min-width: 0; padding-bottom: 12%; }
 .hero-photo { width: 100%; max-width: 100%; height: auto; aspect-ratio: 1024 / 572; object-fit: cover; border-radius: 22px; box-shadow: var(--shadow); }
 .hero-phone {
-  position: absolute; left: 4%; bottom: 0; width: clamp(72px, 17%, 124px); margin: 0;
+  position: absolute; left: 4%; bottom: 0; width: clamp(80px, 19%, 140px); margin: 0;
   filter: drop-shadow(0 18px 30px rgba(0,0,0,0.28));
 }
 .hero-phone figcaption { white-space: nowrap; width: max-content; font-size: 0.75rem; text-align: center; color: var(--ink-2); margin-top: 6px; background: var(--bg); border-radius: 6px; padding: 2px 4px; }
