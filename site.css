@@ -138,13 +138,14 @@ p { margin: 0; }
 /* Routing */
 .routing { padding-block: 48px; }
 .route-grid { display: grid; gap: 16px; }
-@media (min-width: 760px) { .route-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1000px) { .route-grid { grid-template-columns: repeat(3, 1fr); } }
 .route-card {
   display: grid; gap: 8px; padding: 22px; border-radius: var(--radius); background: var(--surface);
   border: 1.5px solid var(--line); color: var(--ink); text-decoration: none; min-height: 44px;
 }
 .route-card:hover { border-color: var(--accent); }
-.route-card strong { font-size: 1.25rem; }
+.route-card { container-type: inline-size; }
+.route-card strong { font-size: clamp(1.05rem, 7.4cqi, 1.3rem); white-space: nowrap; }
 .route-card span { color: var(--ink-2); font-size: 1.05rem; }
 .route-card .go { color: var(--accent); font-weight: 700; }
 .org-link { margin-top: 20px; font-size: 1.05rem; }
