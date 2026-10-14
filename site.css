@@ -311,3 +311,5 @@ fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 8px; }
 .person img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
 .person-lead { max-width: 52rem; }
 @media (min-width: 640px) { .person-lead { grid-template-columns: 200px 1fr; gap: 28px; } .person-lead img { width: 200px; height: 200px; } }
+.fda-line { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 600; color: var(--accent); }
+.fda-line svg { flex: none; width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
