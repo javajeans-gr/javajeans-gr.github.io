@@ -4101,3 +4101,9 @@ select {
     right: 0.8rem;
   }
 }
+
+/* The Board Chair and the Lead Commercial Advisor each take a full row, like the founder card above them, so
+   the longer commercial summary reads as a paragraph instead of stretching a narrow column. */
+.advisor-card-wide {
+  grid-column: 1 / -1;
+}
