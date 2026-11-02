@@ -138,18 +138,6 @@ HOME_MAIN = """<main>
         </div>
       </section>
 
-      <section class="section closing-section">
-        <div class="wrap closing-band">
-          <div>
-            <p class="eyebrow">Independence for them. Peace of mind for everyone who cares.</p>
-            <h2>No extra device to buy. Just the phone they already know.</h2>
-            <p>They decide who is in their circle and what each person sees.</p>
-          </div>
-          <div class="button-row">
-            <a class="button primary" href="contact.html">Join the waitlist</a>
-          </div>
-        </div>
-      </section>
     </main>"""
 
 # The family page carries the voice-help and safe-area pictures next to those features.
