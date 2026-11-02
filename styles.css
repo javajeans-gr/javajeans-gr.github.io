@@ -4050,15 +4050,20 @@ select {
   }
 }
 
-/* With Sign in added, the one-row header needs about 1,065px. Between the phone layout (820px) and that width,
+/* With Sign in added and the Aurora Care name, the one-row header needs about 1,050px. Between the phone layout (820px) and that width,
    tighten the menu slightly so it still fits on one row instead of wrapping under the logo. */
 @media (min-width: 821px) and (max-width: 1100px) {
+  .site-header {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
   .site-nav {
     gap: 0.2rem;
   }
 
   .site-nav a {
-    padding: 0.45rem 0.45rem;
+    padding: 0.45rem 0.4rem;
     font-size: 13px;
   }
 }
