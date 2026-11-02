@@ -1,0 +1,44 @@
+/* "See it in the app" galleries on the Star and Angel feature pages. */
+.app-screens .section-head { margin-bottom: 24px; }
+.app-screens .section-head p { color: var(--muted); margin: 6px 0 0; }
+.screen-grid {
+  display: grid;
+  gap: 28px 24px;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  align-items: start;
+}
+.screen-card { margin: 0; }
+.screen-frame {
+  background: #f4f6f8;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 10px;
+  box-shadow: 0 14px 34px rgba(11, 19, 40, 0.10);
+}
+.screen-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 14px;
+  background: #fff;
+}
+.screen-card figcaption { margin-top: 14px; }
+.screen-card h3 { margin: 0 0 4px; font-size: 1.08rem; line-height: 1.3; }
+.screen-card p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.5; }
+.screen-note { margin-top: 24px; color: var(--muted); font-size: 0.95rem; }
+@media (max-width: 560px) {
+  .screen-grid { grid-template-columns: 1fr; }
+  .screen-frame img { max-height: none; }
+}
+.screen-card-wide { grid-column: 1 / -1; }
+.screen-card-wide .screen-frame img { max-height: none; object-fit: contain; }
+.screen-card-wide figcaption { max-width: 46em; }
+.screen-card-wide .screen-frame { max-width: 900px; }
+.reading-markers { max-width: 560px; margin-top: 14px; background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px 14px; }
+.reading-markers-title { margin: 0 0 8px; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #5B6578; }
+.reading-markers svg { display: block; width: 100%; height: auto; }
+.screen-frame-phone { background: none; border: 0; padding: 0; box-shadow: none; max-width: 300px; }
+.screen-frame-phone img { border-radius: 0; background: none; max-height: none; object-fit: contain; filter: drop-shadow(0 14px 26px rgba(11, 19, 40, .2)); }

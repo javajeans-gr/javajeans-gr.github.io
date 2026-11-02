@@ -1,0 +1,17 @@
+/* Legal document pages (2026-11-02): readable long-form text in the site's tokens. */
+.legal-wrap { max-width: 760px; }
+.legal-doc h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); margin: 8px 0 16px; }
+.legal-doc h2 { font-size: 1.3rem; margin: 36px 0 12px; }
+.legal-doc h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+.legal-doc p, .legal-doc li { font-size: 1.05rem; line-height: 1.65; color: var(--ink); }
+.legal-doc ul { padding-left: 1.3em; }
+.legal-doc li { margin: 8px 0; }
+.legal-doc a { overflow-wrap: anywhere; }
+.legal-back { margin: 0 0 8px; }
+.legal-index { list-style: none; padding: 0; display: grid; gap: 12px; margin-top: 24px; }
+.legal-index li { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 4px; }
+.legal-index span { color: var(--muted); }
+/* Annex A: app text proposed for counsel review (2026-11-02), set apart from counsel's text. */
+.legal-annex { margin-top: 48px; border-top: 2px solid var(--line); padding-top: 8px; }
+.legal-annex .annex-note { color: var(--muted); }
+.legal-annex h3 { font-size: 1.05rem; }

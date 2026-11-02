@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Star Features | Aurora Care</title><link rel="stylesheet" href="styles.css"></head>
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Star Features | Aurora Care</title><link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="screens.css"></head>
   <body>
     <header class="site-header"><a class="brand" href="index.html"><img src="assets/aurora-logo.png" alt="Aurora Care logo"><span>Aurora Care <small>by Ragaven</small></span></a><a class="header-signin" href="https://aurora.ragaven.com/">Sign in</a><nav class="site-nav"><a href="index.html">Home</a><a href="overview.html">Overview</a><a href="personas.html">Personas</a><a aria-current="page" href="star-features.html">Star Features</a><a href="angel-features.html">Angel Features</a><a href="care-intelligence.html">Aurora Care Intelligence</a><a href="team.html">Team</a><a class="nav-cta" href="contact.html">Contact</a><a class="nav-signin" href="https://aurora.ragaven.com/">Sign in</a></nav></header>
     <main>
@@ -40,7 +40,67 @@
         <article class="feature-card"><div class="icon">⌖</div><h3>Safe zone</h3><p>Location awareness for memory-care and wandering concerns.</p></article>
         <article class="feature-card"><div class="icon">✓</div><h3>Star control</h3><p>The Star chooses trusted Angels and permissions.</p></article>
       </div></section>
+      <section class="section app-screens" aria-labelledby="screens-title">
+        <div class="wrap">
+          <div class="section-head"><p class="eyebrow">See it in the app</p><h2 id="screens-title">What the Star sees.</h2><p>Real screens from the Star's own phone.</p></div>
+          <div class="screen-grid">
+          <figure class="screen-card">
+            <div class="screen-frame screen-frame-phone"><img src="assets/screens/star-home.webp" alt="Star home screen: Good morning, a How are you feeling today choice of Great, OK, Tired or Unwell, heart rate 72, blood pressure 174 over 102, breathing rate 15 and HRV 38, a red Help button, a Measure my vitals button, vitals on 5 of 7 days this week, 19 of 21 medicine doses taken this week, a Health Summary, and My Angels." loading="lazy" decoding="async"></div>
+            <figcaption><h3>Your morning screen</h3><p>How you feel today, your latest readings, and a Help button.</p></figcaption>
+          </figure>
+          <figure class="screen-card">
+            <div class="screen-frame"><img src="assets/screens/star-vitals.jpg" alt="Vitals screen with every tile filled: heart rate 68, resting heart rate 61, heart rate variability 52, breathing rate 15, blood pressure 121 over 78, oxygen 97 percent, 4,820 steps, BMI 24.1, and weight 158 pounds, down 1.2 this month." loading="lazy" decoding="async"></div>
+            <figcaption><h3>Vitals from your phone</h3><p>Heart rate, breathing rate, and more, each with the time it was taken.</p></figcaption>
+          </figure>
+          <figure class="screen-card">
+            <div class="screen-frame"><img src="assets/screens/star-normal-range.jpg" alt="Screen titled Aurora Care knows your normal range, with this week&#x27;s check-ins and a 12-week history of readings." loading="lazy" decoding="async"></div>
+            <figcaption><h3>Your own normal</h3><p>Each reading is compared with your usual range, not a general average.</p></figcaption>
+          </figure>
+          <figure class="screen-card screen-card-wide">
+            <div class="screen-frame"><img src="assets/screens/star-heart-rate-day.jpg" width="996" height="500" alt="Heart rate chart for one day, in beats per minute, over green, amber and red bands. It starts near 65 at midnight, climbs to about 114 around 8 AM, touching the red band, falls to about 84 by noon, peaks again near 103 in the early afternoon, and settles near 72 late in the evening. Small camera and watch icons mark each reading." loading="lazy" decoding="async"></div>
+            <div class="reading-markers">
+              <p class="reading-markers-title">Reading markers</p>
+              <svg viewBox="0 0 1300 300" role="img" aria-labelledby="rm-title rm-desc">
+                <title id="rm-title">Reading markers</title>
+                <desc id="rm-desc">A camera marks a reading from the 30-second camera check, a watch marks a reading from a wearable, and a grey dot marks a reading from another source.</desc>
+                <rect x="0" y="0" width="1300" height="300" rx="10" fill="#E1F2E6"/>
+                <path d="M60 205 C 200 205, 300 160, 420 115 S 620 125, 760 135 S 1080 130, 1250 85" fill="none" stroke="#3E8A4C" stroke-width="40" stroke-linecap="round"/>
+                <g transform="translate(155 80)">
+                  <path d="M50 0h46l12 22H140a16 16 0 0 1 16 16v68a16 16 0 0 1-16 16H16A16 16 0 0 1 0 106V38a16 16 0 0 1 16-16h22z" fill="#549EB6" stroke="#fff" stroke-width="3"/>
+                  <circle cx="78" cy="70" r="24" fill="#fff"/><circle cx="78" cy="70" r="12" fill="#549EB6"/>
+                </g>
+                <g transform="translate(610 75)">
+                  <rect x="0" y="0" width="92" height="126" rx="46" fill="#fff"/>
+                  <rect x="14" y="8" width="64" height="110" rx="20" fill="#4357D9"/>
+                  <rect x="6" y="30" width="80" height="66" rx="18" fill="#4357D9"/>
+                  <rect x="22" y="42" width="48" height="42" rx="9" fill="#AAB4EE"/>
+                </g>
+                <circle cx="1080" cy="133" r="60" fill="#7E8394" stroke="#fff" stroke-width="3"/>
+                <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="38" fill="#5B6578" text-anchor="middle">
+                  <text x="233" y="270">Camera</text><text x="656" y="270">Wearable</text><text x="1080" y="270">Other</text>
+                </g>
+              </svg>
+            </div>
+            <figcaption><h3>Heart rate through the day</h3><p>Every reading sits on bands set for you: green is your usual range, amber and red are outside it. Each marker shows where the reading came from: the camera check, a wearable, or another source.</p></figcaption>
+          </figure>
+          <figure class="screen-card">
+            <div class="screen-frame"><img src="assets/screens/star-medications.jpg" alt="Active medications list: morning vitamins, 2 tablets at 8 AM and 1:30 PM, and an evening supplement, 1 capsule at night, both with reminders on." loading="lazy" decoding="async"></div>
+            <figcaption><h3>Medicines and reminders</h3><p>Doses, times, and reminders in one list.</p></figcaption>
+          </figure>
+          <figure class="screen-card">
+            <div class="screen-frame"><img src="assets/screens/star-health-report.jpg" alt="Health report showing 30-day blood pressure trends and a medication regularity chart for Lisinopril and Metoprolol." loading="lazy" decoding="async"></div>
+            <figcaption><h3>A report for your doctor</h3><p>Thirty days of trends and medicine regularity, shared as a PDF.</p></figcaption>
+          </figure>
+          <figure class="screen-card">
+            <div class="screen-frame"><img src="assets/screens/star-my-angels.jpg" alt="My Angels list with Maya, who has joined, plus a button to invite another Angel." loading="lazy" decoding="async"></div>
+            <figcaption><h3>You choose your Angels</h3><p>Invite the people you trust, and see who has joined.</p></figcaption>
+          </figure>
+          </div>
+          <p class="screen-note">Screens from the Aurora Care app, shown with sample data.</p>
+        </div>
+      </section>
     </main>
+    <section class="legal-links" aria-labelledby="legal-links-title"><div class="wrap"><h2 id="legal-links-title" class="legal-links-title">Legal and privacy</h2><ul class="legal-links-list"><li><a href="legal/terms-of-service.html">Terms of Service</a></li><li><a href="legal/privacy-policy.html">Privacy Policy</a></li><li><a href="legal/eula.html">End User License Agreement</a></li><li><a href="legal/consumer-health-data-policy.html">Consumer Health Data Policy</a></li></ul><p class="legal-note">Aurora Care supports earlier awareness and follow-up. It does not replace clinicians, emergency services, or medical diagnosis.</p></div></section>
     <footer class="footer"><div class="wrap"><span>© <span data-year></span> Ragaven</span></div></footer><script src="script.js"></script>
   </body>
 </html>

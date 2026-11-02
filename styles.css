@@ -936,19 +936,6 @@ img, video { display: block; max-width: 100%; }
   color: white !important;
 }
 
-/* Sign in to the Aurora web dashboard: the outlined partner of Contact, always last in the header. */
-.site-nav a.nav-signin {
-  border: 2px solid var(--teal);
-  color: var(--teal);
-  background: var(--paper);
-}
-
-.site-nav a.nav-signin:hover,
-.site-nav a.nav-signin:focus-visible {
-  background: var(--soft);
-  color: var(--teal);
-}
-
 .hero {
   min-height: 760px;
   padding: 72px clamp(20px, 5vw, 72px) 82px;
@@ -4050,20 +4037,42 @@ select {
   }
 }
 
-/* With Sign in added and the Aurora Care name, the one-row header needs about 1,050px. Between the phone layout (820px) and that width,
+/* Feature-page films (Star / Angel two-minute films, 2026-11-02): same look as the home page films. */
+.feature-film { margin: 0; }
+.feature-film video { display: block; width: 100%; height: auto; border-radius: var(--radius); background: #0b1328; }
+.feature-film figcaption { margin-top: 12px; color: var(--muted); }
+.feature-film figcaption strong { color: var(--ink); }
+
+/* Legal and privacy block above every footer (2026-11-02). */
+.legal-links { border-top: 1px solid var(--line); padding: 28px 0 8px; }
+.legal-links-title { font-size: 1.1rem; margin: 0 0 8px; }
+.legal-links-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.legal-links-list a { display: inline-flex; min-height: 44px; align-items: center; }
+.legal-note { margin: 8px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+/* Sign in to the Aurora web dashboard: the outlined partner of Contact, always last in the header. */
+.site-nav a.nav-signin {
+  border: 2px solid var(--teal);
+  color: var(--teal);
+  background: var(--paper);
+}
+
+.site-nav a.nav-signin:hover,
+.site-nav a.nav-signin:focus-visible {
+  background: var(--soft);
+  color: var(--teal);
+}
+
+
+/* With Sign in added, the one-row header needs about 1,065px. Between the phone layout (820px) and that width,
    tighten the menu slightly so it still fits on one row instead of wrapping under the logo. */
 @media (min-width: 821px) and (max-width: 1100px) {
-  .site-header {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-
   .site-nav {
     gap: 0.2rem;
   }
 
   .site-nav a {
-    padding: 0.45rem 0.4rem;
+    padding: 0.45rem 0.45rem;
     font-size: 13px;
   }
 }
@@ -4106,3 +4115,13 @@ select {
     right: 0.8rem;
   }
 }
+
+/* Sweep 2026-11-02: two pre-existing sideways-scroll causes.
+   1. The shared card rule sets overflow: visible on .process-grid article, which lets each card's decorative
+      ::after circle (right: -42px) spill past the page edge on Overview. These cards clip it, as first intended.
+   2. The Care Intelligence flow's three boxes did not fit side by side in the hero's side panel (the last ran off
+      the page at desktop widths); they now stack with down arrows, as they already did on phones. */
+.process-grid article { overflow: hidden; }
+.ai-flow { grid-template-columns: 1fr; }
+.ai-flow .ai-arrow { transform: rotate(90deg); justify-self: center; }
+.ai-node { min-width: 0; min-height: 0; }

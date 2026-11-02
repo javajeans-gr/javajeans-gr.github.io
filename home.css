@@ -1,0 +1,181 @@
+/* Aurora Care home page. Standalone so the other pages keep styles.css. */
+:root {
+  --ink: #0b1328;
+  --muted: #4a5568;
+  --soft: #f3f8f7;
+  --paper: #ffffff;
+  --line: #d6e3e1;
+  --teal: #0a6f68;
+  --teal-hover: #085a54;
+  --aqua: #dff7f2;
+  --pending-bg: #fff7e6;
+  --pending-ink: #7a4b00;
+  --radius: 14px;
+  --max: 1160px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--teal); }
+a:focus-visible, .btn:focus-visible { outline: 3px solid #2f80ed; outline-offset: 3px; }
+h1, h2, h3 { line-height: 1.2; margin: 0 0 .5em; }
+p { margin: 0 0 1em; }
+
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+@media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+.skip { position: absolute; left: -999px; top: 8px; background: var(--ink); color: #fff; padding: 10px 14px; border-radius: 8px; z-index: 10; }
+.skip:focus { left: 8px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Header */
+.top { border-bottom: 1px solid var(--line); background: var(--paper); z-index: 5; }
+@media (min-width: 900px) { .top { position: sticky; top: 0; } }
+.top-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; min-height: 68px; padding-top: 8px; padding-bottom: 8px; }
+.brand { display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 1.15rem; margin-right: auto; }
+.brand small { font-weight: 500; color: var(--muted); font-size: .85rem; }
+.nav { display: flex; gap: 0 4px; order: 3; width: 100%; margin-left: -12px; overflow-x: auto; }
+.nav a { color: var(--ink); text-decoration: none; padding: 10px 12px; white-space: nowrap; border-radius: 8px; min-height: 44px; display: inline-flex; align-items: center; }
+.nav a:hover { background: var(--soft); }
+@media (max-width: 899px) { .nav { scrollbar-width: none; margin-left: -8px; } .nav a { padding: 10px 8px; font-size: 1rem; } }
+@media (min-width: 900px) { .top-row { flex-wrap: nowrap; } .nav { order: 0; width: auto; margin-left: 0; overflow: visible; } }
+@media (max-width: 480px) { .top .btn-small { display: none; } }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 12px 24px; border-radius: 999px; font-weight: 700; font-size: 1.05rem; text-decoration: none; border: 2px solid transparent; }
+.btn-primary { background: var(--teal); color: #fff; }
+.btn-primary:hover { background: var(--teal-hover); }
+.btn-secondary { background: transparent; color: var(--teal); border-color: transparent; text-decoration: underline; text-underline-offset: 4px; }
+.btn-secondary:hover { background: var(--soft); }
+.btn-small { min-height: 44px; padding: 8px 18px; font-size: 1rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 8px 0 16px; }
+.cta-row.center { justify-content: center; }
+
+/* Hero */
+.hero { padding: 40px 0 48px; background: linear-gradient(180deg, var(--aqua) 0%, var(--paper) 85%); }
+.hero-grid { display: grid; gap: 40px; align-items: center; }
+@media (min-width: 900px) { .hero { padding: 72px 0 80px; } .hero-grid { grid-template-columns: 1.15fr .85fr; } }
+.eyebrow { font-size: 1rem; font-weight: 700; color: var(--teal); letter-spacing: .02em; margin-bottom: 12px; }
+h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
+.lead { font-size: clamp(1.18rem, 1.6vw, 1.35rem); color: var(--muted); max-width: 36em; }
+.reassure { display: flex; align-items: center; gap: 10px; font-weight: 600; margin: 0; }
+.reassure-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.tick { width: 22px; height: 22px; border-radius: 50%; background: var(--teal); flex: none; position: relative; }
+.tick::after { content: ""; position: absolute; left: 7px; top: 4px; width: 6px; height: 11px; border: solid #fff; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+
+/* Hero screenshots: her phone and her family's phone side by side, same height, nothing covered.
+   Flex-grow equals each image's width/height ratio (both 440/956), so equal heights fall out. */
+.shots { margin: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 12px 16px; width: 100%; max-width: 540px; justify-self: center; }
+.shot { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+.shot-her { flex: 0.46 1 0; }
+.shot-family { flex: 0.46 1 0; }
+.shot img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 30px rgba(11, 19, 40, .22)); }
+.shot-label { margin-top: 10px; font-size: .95rem; font-weight: 700; color: var(--ink); text-align: center; }
+.shots figcaption { flex-basis: 100%; text-align: center; font-size: .95rem; color: var(--muted); margin-top: 4px; }
+
+/* Sections */
+.section { padding: 56px 0; }
+@media (min-width: 900px) { .section { padding: 80px 0; } }
+.section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 28px; }
+
+/* See how it works */
+.how { background: var(--paper); }
+.how-grid { display: grid; gap: 24px; align-items: start; }
+@media (min-width: 860px) { .how-grid { grid-template-columns: 2fr 1fr; } }
+.film { margin: 0; }
+.film video { display: block; width: 100%; height: auto; border-radius: var(--radius); background: #0b1328; }
+.film-tall video { max-width: 360px; margin: 0 auto; }
+.film figcaption { margin-top: 12px; color: var(--muted); }
+.film figcaption strong { color: var(--ink); }
+
+/* Audiences */
+.audiences { background: var(--paper); }
+.aud-grid { display: grid; gap: 16px; }
+@media (min-width: 760px) { .aud-grid { grid-template-columns: repeat(3, 1fr); } }
+.aud-card { display: flex; flex-direction: column; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); text-decoration: none; color: var(--ink); background: var(--paper); min-height: 44px; transition: border-color .15s, box-shadow .15s; }
+.aud-card:hover { border-color: var(--teal); box-shadow: 0 10px 28px rgba(11, 19, 40, .08); }
+.aud-card h3 { font-size: 1.3rem; }
+.aud-card p { color: var(--muted); }
+.more { margin-top: auto; font-weight: 700; color: var(--teal); text-decoration: none; display: inline-flex; gap: 6px; align-items: center; min-height: 44px; }
+.org-link { margin: 20px 0 0; font-size: 1rem; }
+.org-link a { display: inline-flex; min-height: 44px; align-items: center; }
+
+/* Benefits */
+.benefits { background: var(--soft); }
+.ben-grid { display: grid; gap: 16px; }
+@media (min-width: 640px) { .ben-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1040px) { .ben-grid { grid-template-columns: repeat(4, 1fr); } }
+.ben { background: var(--paper); border-radius: var(--radius); padding: 24px; display: flex; flex-direction: column; }
+.ben h3 { font-size: 1.2rem; }
+.ben p { color: var(--muted); }
+.ben-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--aqua); display: grid; place-items: center; margin-bottom: 16px; }
+.ben-icon svg { width: 28px; height: 28px; fill: none; stroke: var(--teal); stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Trust */
+.trust-grid { display: grid; gap: 16px; }
+@media (min-width: 760px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
+.trust-item { border-left: 4px solid var(--teal); padding: 4px 0 4px 18px; }
+.trust-item h3 { font-size: 1.15rem; }
+.pending { background: var(--pending-bg); color: var(--pending-ink); border-radius: 8px; padding: 8px 12px; font-size: 1rem; }
+.proof-strip { margin-top: 32px; border: 2px dashed var(--line); border-radius: var(--radius); padding: 20px; text-align: center; color: var(--muted); font-size: 1rem; }
+.disclaimer { margin-top: 24px; font-size: 1rem; color: var(--muted); }
+
+/* Quotes */
+.quotes { background: var(--soft); }
+.quote-grid { display: grid; gap: 16px; }
+@media (min-width: 760px) { .quote-grid { grid-template-columns: repeat(3, 1fr); } }
+.quote { margin: 0; background: var(--paper); border-radius: var(--radius); padding: 24px; }
+.quote blockquote { margin: 0 0 12px; font-size: 1.1rem; color: var(--pending-ink); }
+.quote figcaption { color: var(--muted); font-size: 1rem; }
+
+/* Closing */
+.closing-box { text-align: center; max-width: 760px; }
+.closing-box h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.closing-box .lead { margin-left: auto; margin-right: auto; }
+.contact-line { color: var(--muted); }
+.contact-line a { display: inline-flex; min-height: 44px; align-items: center; }
+
+/* Footer */
+.foot { border-top: 1px solid var(--line); padding: 24px 0; font-size: 1rem; color: var(--muted); }
+.foot-row { display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; align-items: center; }
+.foot nav { display: flex; gap: 8px; }
+.foot nav a { display: inline-flex; min-height: 44px; align-items: center; padding: 0 8px; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* Real beta quotes (2026-11-02): ink, not the placeholder colour; two columns on wide screens. */
+.quote-real blockquote { color: var(--ink); }
+.quote-real figcaption strong { color: var(--ink); }
+@media (min-width: 760px) { .quote-grid-real { grid-template-columns: repeat(2, 1fr); } }
+
+/* Legal and privacy block above the footer (2026-11-02); the same rules live in styles.css for the other pages. */
+.legal-links { border-top: 1px solid var(--line); padding: 28px 0 8px; }
+.legal-links-title { font-size: 1.1rem; margin: 0 0 8px; }
+.legal-links-list { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; }
+.legal-links-list a { display: inline-flex; min-height: 44px; align-items: center; }
+.legal-note { margin: 8px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+/* Sign in to the Aurora web dashboard (merged from www.ragaven.com, 2026-11-02): the outlined partner of the
+   launch button. It stays visible on phones, where the launch button hides. */
+.btn-signin { margin-left: auto; background: var(--paper); color: var(--teal); border-color: var(--teal); }
+.btn-signin:hover, .btn-signin:focus-visible { background: var(--soft); }
+@media (min-width: 900px) { .btn-signin { margin-left: auto; } }
+@media (max-width: 480px) { .top .btn-signin { display: inline-flex; } }
+
+/* In everyday life: the messaging-guide pictures (2026-11-02). */
+.life-grid { display: grid; gap: 24px; }
+@media (min-width: 900px) { .life-grid { grid-template-columns: 1fr 1fr; } }
+.life-fig { margin: 0; }
+.life-fig img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
+.life-fig figcaption { margin-top: 12px; color: var(--muted); }
+.life-fig figcaption strong { color: var(--ink); }

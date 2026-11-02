@@ -3,101 +3,205 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aurora Care by Ragaven | Connected Care for Aging Adults</title>
-    <meta name="description" content="Aurora Care helps aging adults, families, and professional caregivers see scattered health warning signs and turn everyday check-ins into informed care action.">
-    <link rel="stylesheet" href="styles.css">
+    <title>Aurora Care by Ragaven</title>
+    <meta name="description" content="Aurora Care is a phone app for older adults at home and the family they choose. A 30-second check shows how they're doing compared with their own usual.">
+    <link rel="icon" href="assets/aurora-logo.png">
+    <link rel="stylesheet" href="home.css">
   </head>
-  <body class="problem-home">
-    <header class="site-header">
-      <a class="brand" href="index.html">
-        <img src="assets/aurora-logo.png" alt="Aurora Care logo">
-        <span>Aurora Care <small>by Ragaven</small></span>
-      </a>
-      <a class="header-signin" href="https://aurora.ragaven.com/">Sign in</a>
-      <nav class="site-nav" aria-label="Main navigation">
-        <a aria-current="page" href="index.html">Home</a>
-        <a href="overview.html">Overview</a>
-        <a href="personas.html">Personas</a>
-        <a href="star-features.html">Star Features</a>
-        <a href="angel-features.html">Angel Features</a>
-        <a href="care-intelligence.html">Aurora Care Intelligence</a>
-        
-        <a href="team.html">Team</a>
-        <a class="nav-cta" href="contact.html">Contact</a>
-        <a class="nav-signin" href="https://aurora.ragaven.com/">Sign in</a>
-      </nav>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+
+    <header class="top">
+      <div class="wrap top-row">
+        <a class="brand" href="index.html" aria-label="Aurora Care by Ragaven, home">
+          <img src="assets/aurora-logo.png" alt="" width="40" height="40">
+          <span>Aurora Care <small>by Ragaven</small></span>
+        </a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="star-features.html">Product</a>
+          <a href="personas.html">Who it is for</a>
+          <a href="team.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <a class="btn btn-small btn-signin" href="https://aurora.ragaven.com/">Sign in</a>
+        <a class="btn btn-primary btn-small" href="contact.html">Get launch updates</a>
+      </div>
     </header>
 
-    <main>
-      <section class="problem-hero home-hero-simple">
-        <div class="wrap home-hero-grid">
-          <div class="problem-hero-copy">
-            <p class="eyebrow">Aurora Care by Ragaven</p>
-            <h1>Care between check-ins.</h1>
-            <p class="lead">Aurora Care helps Stars and trusted Angels spot meaningful change earlier and coordinate the next care step.</p>
-            <div class="button-row">
-              <a class="button primary" href="overview.html">See how Aurora Care works</a>
-              <a class="button secondary" href="personas.html">Meet Stars and Angels</a>
+    <main id="main">
+      <!-- 1. Hero -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Launching soon on iPhones</p>
+            <h1 id="hero-title">Mom says she's fine. Now we both know.</h1>
+            <p class="lead">A 30-second check on her own phone shows how she's doing compared with her usual. She chooses who in the family sees it.</p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="contact.html">Get launch updates</a>
+              <a class="btn btn-secondary" href="#how">See how it works</a>
             </div>
+            <ul class="reassure-list">
+              <li class="reassure"><span class="tick" aria-hidden="true"></span>No extra device required.</li>
+              <li class="reassure"><span class="tick" aria-hidden="true"></span>She decides which data and alerts are shared.</li>
+            </ul>
           </div>
 
-          <div class="home-hero-card">
-            <img src="assets/aurora-logo.png" alt="">
-            <strong>Signals become action</strong>
-            <span>Vitals, labs, meds, routines, and updates in one care picture.</span>
-          </div>
+          <figure class="shots">
+            <div class="shot shot-her">
+              <img src="assets/home/app-her-phone.webp" width="440" height="956" alt="Aurora Care on her own phone: a Good morning screen asking how she feels today, her latest heart rate 72, blood pressure 174 over 102, breathing rate 15 and HRV 38, a red Help button, a Measure my vitals button, vitals on 5 of 7 days this week, 19 of 21 medicine doses taken this week, a Health Summary to share as a PDF, and the person in her care circle.">
+              <span class="shot-label">Her phone</span>
+            </div>
+            <div class="shot shot-family">
+              <img src="assets/home/app-family-phone.webp" width="440" height="956" alt="Aurora Care on a family member's phone: Evelyn feels great and checked in 2 hours ago, a reminder that a vital check is due, then four vitals side by side: heart rate 72, breathing rate 16, blood pressure 174 over 102 marked ALERT, and HRV 38, followed by 19 of 21 medicine doses taken this week and a Health Summary to share.">
+              <span class="shot-label">Her family's phone</span>
+            </div>
+            <figcaption>Sample screens with example readings.</figcaption>
+          </figure>
         </div>
       </section>
 
-      <section class="section home-video-section">
-        <div class="wrap split home-video-wrap">
-          <div>
-            <p class="eyebrow">One-minute overview</p>
-            <h2>Connected care, simply.</h2>
-            <p class="lead">Daily signals, camera vitals, and Angel updates in one clearer loop.</p>
-          </div>
-          <div class="video-shell">
-            <video controls poster="assets/aurora-one-minute-poster.jpg">
-              <source src="assets/aurora-one-minute.mp4" type="video/mp4">
-            </video>
-          </div>
-        </div>
-      </section>
-
-      <section class="section home-basics-section">
+      <!-- 2. Audience routing -->
+      <section class="section audiences" aria-labelledby="aud-title">
         <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">The basics</p>
-            <h2>What Aurora Care does.</h2>
+          <h2 id="aud-title" class="section-title">Who Aurora Care is for</h2>
+          <div class="aud-grid">
+            <a class="aud-card" href="personas.html">
+              <h3>For families</h3>
+              <p>See how Mom or Dad is doing between calls.</p>
+              <span class="more">For families <span aria-hidden="true">&rarr;</span></span>
+            </a>
+            <a class="aud-card" href="personas.html">
+              <h3>For yourself</h3>
+              <p>Keep your health in your hands, and choose who sees it.</p>
+              <span class="more">Using Aurora Care yourself <span aria-hidden="true">&rarr;</span></span>
+            </a>
+            <a class="aud-card" href="personas.html">
+              <h3>For professional caregivers</h3>
+              <p>One shared picture and cleaner handoffs with the family.</p>
+              <span class="more">For caregivers <span aria-hidden="true">&rarr;</span></span>
+            </a>
           </div>
-          <div class="card-grid">
-            <article class="feature-card"><div class="icon">1</div><h3>Observe</h3><p>Bring vitals, labs, meds, routines, symptoms, and visits into one care picture.</p></article>
-            <article class="feature-card"><div class="icon">2</div><h3>Understand</h3><p>Compare signals against the Star's baseline so change is easier to see.</p></article>
-            <article class="feature-card"><div class="icon">3</div><h3>Act</h3><p>Share clear updates so Angels know when to follow up.</p></article>
+          <p class="org-link"><a href="contact.html">For care communities and organizations</a></p>
+        </div>
+      </section>
+
+      <!-- 2b. See how it works: two short films, never auto-played -->
+      <section class="section how" id="how" aria-labelledby="how-title">
+        <div class="wrap">
+          <h2 id="how-title" class="section-title">See how it works</h2>
+          <div class="how-grid">
+            <figure class="film film-wide">
+              <video controls playsinline preload="none" poster="assets/home/aurora-for-you-poster.jpg" width="1280" height="720" aria-describedby="film-you-cap">
+                <source src="assets/home/aurora-for-you.mp4" type="video/mp4">
+                <track kind="captions" src="assets/home/aurora-for-you.vtt" srclang="en" label="English">
+              </video>
+              <figcaption id="film-you-cap"><strong>For you.</strong> Your health on your own phone. You decide what is shared. 10 seconds.</figcaption>
+            </figure>
+            <figure class="film film-tall">
+              <video controls playsinline preload="none" poster="assets/home/aurora-for-family-poster.jpg" width="720" height="1280" aria-describedby="film-family-cap">
+                <source src="assets/home/aurora-for-family.mp4" type="video/mp4">
+                <track kind="captions" src="assets/home/aurora-for-family.vtt" srclang="en" label="English">
+              </video>
+              <figcaption id="film-family-cap"><strong>For your family.</strong> When you can't be there, see the essentials in one view. 10 seconds.</figcaption>
+            </figure>
           </div>
         </div>
       </section>
 
-      <section class="section closing-section">
-        <div class="wrap closing-band">
-          <div>
-            <p class="eyebrow">Start with the right view</p>
-            <h2>Explore the care circle.</h2>
-            <p>See how Stars and Angels use Aurora Care.</p>
+      <!-- 3. Four benefits -->
+      <section class="section benefits" aria-labelledby="ben-title">
+        <div class="wrap">
+          <h2 id="ben-title" class="section-title">What Aurora Care does</h2>
+          <div class="ben-grid">
+            <article class="ben">
+              <div class="ben-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5"/><path d="M15 14.4c2.6-.3 4.8 1.2 5.5 4.6"/></svg>
+              </div>
+              <h3>Easy to use, with a care circle you choose</h3>
+              <p>Your care circle is the family and caregivers you invite. It works on the phone you have, and you decide what each person sees.</p>
+              <a class="more" href="star-features.html">Learn more<span class="sr"> about the care circle</span> <span aria-hidden="true">&rarr;</span></a>
+            </article>
+            <article class="ben">
+              <div class="ben-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg>
+              </div>
+              <h3>Vitals and trends from a 30-second check</h3>
+              <p>Look at your phone's camera for 30 seconds. See how today compares with your own usual.</p>
+              <a class="more" href="star-features.html">Learn more<span class="sr"> about the 30-second check</span> <span aria-hidden="true">&rarr;</span></a>
+            </article>
+            <article class="ben">
+              <div class="ben-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21"/></svg>
+              </div>
+              <h3>Talk to your phone for immediate help</h3>
+              <p>Say "Hey Siri, Start Emergency Help in Aurora" and your care circle gets an alert right away, as long as your phone is within earshot.</p>
+              <a class="more" href="star-features.html">Learn more<span class="sr"> about voice help</span> <span aria-hidden="true">&rarr;</span></a>
+            </article>
+            <article class="ben">
+              <div class="ben-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3.5h6v2.5H9z"/><path d="M8.5 11h7M8.5 14.5h7M8.5 18h4"/></svg>
+              </div>
+              <h3>Vitals, labs, medicines, and alerts in one place</h3>
+              <p>Bring a clear report of recent readings, medicines, and labs to your next doctor or lab visit.</p>
+              <a class="more" href="star-features.html">Learn more<span class="sr"> about reports</span> <span aria-hidden="true">&rarr;</span></a>
+            </article>
           </div>
-          <div class="button-row">
-            <a class="button primary" href="overview.html">Overview</a>
-            <a class="button secondary" href="star-features.html">Star Features</a>
-            <a class="button secondary" href="angel-features.html">Angel Features</a>
+        </div>
+      </section>
+
+      <!-- 4. In everyday life (pictures from the messaging guide, 2026-11-01) -->
+      <section class="section life" aria-labelledby="life-title">
+        <div class="wrap">
+          <h2 id="life-title" class="section-title">In everyday life</h2>
+          <div class="life-grid">
+            <figure class="life-fig">
+              <picture>
+                <source media="(max-width: 600px)" srcset="assets/messaging/thirty-second-tall.jpg">
+                <img src="assets/messaging/thirty-second-wide.jpg" alt="Mom checks in for 30 seconds in her kitchen; on her daughter's phone, heart rate and breathing rate are within her usual and blood pressure has been higher than usual for four days." loading="lazy">
+              </picture>
+            </figure>
+            <figure class="life-fig">
+              <img src="assets/messaging/safe-area-wide.jpg" alt="An older man walks past the edge of his safe area; his family gets an alert asking whether they want to check in." loading="lazy">
+            </figure>
           </div>
+        </div>
+      </section>
+
+      <!-- 5. Testimonials -->
+      <section class="section quotes" aria-labelledby="quotes-title">
+        <div class="wrap">
+          <h2 id="quotes-title" class="section-title">From our beta families</h2>
+          <div class="quote-grid quote-grid-real">
+            <figure class="quote quote-real"><blockquote>&ldquo;My doctor wants me to track my blood pressure (BP), but even with a cuff on my desk, stopping to measure felt like a chore. With Aurora Care, it takes 30 seconds using the phone I always carry, no matter where I am. I check my BP far more often now, I can see when my readings run higher, and it&rsquo;s finally a habit.&rdquo;</blockquote><figcaption><strong>Aniruddh</strong>, beta tester</figcaption></figure>
+            <figure class="quote quote-real"><blockquote>&ldquo;My husband kept waking up tired every morning. So we started using Aurora Care, with him as the Star and me as his Angel. Within weeks of monitoring Aurora Care showed his vitals trending outside the normal range and suggested a visit to a clinician. His readings helped uncover a cardiac condition just in time, which previous check-ups had missed. I wish every family in their 40s and 50s uses Aurora Care before a hidden condition becomes an emergency.&rdquo;</blockquote><figcaption><strong>Katya (Angel) and Alex (Star)</strong>, beta testers</figcaption></figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Contact and final CTA -->
+      <section class="section closing" aria-labelledby="close-title">
+        <div class="wrap closing-box">
+          <h2 id="close-title">Be first to know when Aurora Care launches</h2>
+          <p class="lead">Launching soon on iPhones. We'll send one note on launch day.</p>
+          <div class="cta-row center">
+            <a class="btn btn-primary" href="contact.html">Get launch updates</a>
+          </div>
+          <p class="contact-line">Questions? <a href="contact.html">Contact us</a></p>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <span>&copy; 2026 Ragaven</span>
-      <span>Aurora Care keeps care connected.</span>
-      <a href="privacy.html">Privacy</a>
+    <section class="legal-links" aria-labelledby="legal-links-title"><div class="wrap"><h2 id="legal-links-title" class="legal-links-title">Legal and privacy</h2><ul class="legal-links-list"><li><a href="legal/terms-of-service.html">Terms of Service</a></li><li><a href="legal/privacy-policy.html">Privacy Policy</a></li><li><a href="legal/eula.html">End User License Agreement</a></li><li><a href="legal/consumer-health-data-policy.html">Consumer Health Data Policy</a></li></ul><p class="legal-note">Aurora Care supports earlier awareness and follow-up. It does not replace clinicians, emergency services, or medical diagnosis.</p></div></section>
+    <footer class="foot">
+      <div class="wrap foot-row">
+        <span>&copy; <span data-year>2026</span> Ragaven</span>
+        <nav aria-label="Footer">
+          <a href="team.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="legal/index.html">Legal</a>
+        </nav>
+      </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
