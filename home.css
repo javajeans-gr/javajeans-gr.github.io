@@ -179,3 +179,28 @@ h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
 .life-fig img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
 .life-fig figcaption { margin-top: 12px; color: var(--muted); }
 .life-fig figcaption strong { color: var(--ink); }
+
+/* Messaging-guide home (2026-11-02): who-it-is-for line and three benefits with pictures. */
+.who-line { padding: 8px 0 24px; }
+.who-line p { margin: 0; font-size: 1.1rem; color: var(--muted); }
+.who-line a { color: var(--teal); font-weight: 700; margin-left: 4px; white-space: nowrap; }
+.bfts .wrap { display: grid; gap: 56px; }
+.bft { display: grid; gap: 20px; align-items: center; }
+.bft-fig { margin: 0; }
+.bft-fig img { display: block; width: 100%; height: auto; border-radius: var(--radius); }
+.bft-copy h3 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; margin: 6px 0 12px; }
+.bft-copy p { font-size: 1.1rem; }
+.bft-list { margin: 12px 0 0; padding-left: 1.2em; color: var(--muted); }
+.bft-list li { margin: 6px 0; }
+.bft-note { margin-top: 14px; font-size: 0.95rem; color: var(--muted); }
+@media (min-width: 900px) {
+  .bft { grid-template-columns: 1.15fr 1fr; gap: 40px; }
+  .bft-flip .bft-fig { order: 2; }
+}
+
+/* Six menu items plus two buttons need ~1360px on one row; below that the menu takes its own row (2026-11-02). */
+.brand span, .top .btn { white-space: nowrap; }
+@media (min-width: 900px) and (max-width: 1359px) {
+  .top-row { flex-wrap: wrap; }
+  .nav { order: 3; width: 100%; margin-left: -12px; overflow-x: auto; }
+}

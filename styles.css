@@ -4125,3 +4125,30 @@ select {
 .ai-flow { grid-template-columns: 1fr; }
 .ai-flow .ai-arrow { transform: rotate(90deg); justify-self: center; }
 .ai-node { min-width: 0; min-height: 0; }
+
+/* How it works (messaging guide, 2026-11-02). */
+.how-loop { margin: 0; }
+.how-loop img { display: block; width: 100%; max-width: 440px; height: auto; margin: 0 auto; border-radius: var(--radius); }
+.how-more { margin-top: 20px; font-weight: 700; }
+.how-note { margin-top: 16px; color: var(--muted); font-size: 0.95rem; }
+.situations-wrap { overflow-x: auto; }
+.situations { width: 100%; border-collapse: collapse; font-size: 1rem; }
+.situations th, .situations td { text-align: left; vertical-align: top; padding: 14px 12px; border-bottom: 1px solid var(--line); }
+.situations thead th { font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; color: var(--muted); }
+.situations tbody th { font-weight: 700; color: var(--ink); width: 34%; }
+@media (max-width: 700px) {
+  .situations thead { display: none; }
+  .situations, .situations tbody, .situations tr, .situations th, .situations td { display: block; width: 100%; }
+  .situations tr { border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 4px; margin-bottom: 12px; }
+  .situations th, .situations td { border: 0; padding: 6px 12px; }
+  .situations td::before { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+  .situations td:nth-of-type(1)::before { content: "What Aurora Care shows"; }
+  .situations td:nth-of-type(2)::before { content: "A good next step"; }
+}
+.films-grid { display: grid; gap: 24px; align-items: start; }
+@media (min-width: 900px) { .films-grid { grid-template-columns: 1.6fr 1fr; } }
+.films-tall video { max-width: 360px; margin: 0 auto; }
+
+/* "Launching soon" is longer than the old "- Nov 2026": sit it on the badge's top-right corner so it never covers
+   the words "App Store" (2026-11-02). */
+.store-badge-img.availability-badge::after { top: -10px; right: -8px; bottom: auto; }
