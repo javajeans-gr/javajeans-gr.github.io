@@ -12,6 +12,3 @@
 .legal-index li { border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 4px; }
 .legal-index span { color: var(--muted); }
 /* Annex A: app text proposed for counsel review (2026-11-02), set apart from counsel's text. */
-.legal-annex { margin-top: 48px; border-top: 2px solid var(--line); padding-top: 8px; }
-.legal-annex .annex-note { color: var(--muted); }
-.legal-annex h3 { font-size: 1.05rem; }
