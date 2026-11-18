@@ -43,7 +43,9 @@ p { margin: 0 0 1em; }
 @media (min-width: 900px) { .top { position: sticky; top: 0; } }
 .top-row { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; min-height: 68px; padding-top: 8px; padding-bottom: 8px; }
 .brand { display: flex; align-items: center; gap: 10px; min-height: 44px; text-decoration: none; color: var(--ink); font-weight: 700; font-size: 1.15rem; margin-right: auto; }
-.brand small { font-weight: 500; color: var(--muted); font-size: .85rem; }
+.brand span { display: block; line-height: 1.15; }
+.brand small { display: block; font-weight: 500; color: var(--muted); font-size: .72rem; }
+.brand sup { font-size: .55em; line-height: 0; margin-left: 1px; }
 .nav { display: flex; gap: 0 4px; order: 3; width: 100%; margin-left: -12px; overflow-x: auto; }
 .nav a { color: var(--ink); text-decoration: none; padding: 10px 12px; white-space: nowrap; border-radius: 8px; min-height: 44px; display: inline-flex; align-items: center; }
 .nav a:hover { background: var(--soft); }
@@ -200,6 +202,9 @@ h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
 
 /* Six menu items plus two buttons need ~1360px on one row; below that the menu takes its own row (2026-11-02). */
 .brand span, .top .btn { white-space: nowrap; }
+/* The brand never shrinks under the menu; on one row the menu items sit a little closer so everything fits (2026-11-17). */
+.brand { flex-shrink: 0; }
+@media (min-width: 1360px) { .nav a { padding: 10px 8px; } }
 @media (min-width: 900px) and (max-width: 1359px) {
   .top-row { flex-wrap: wrap; }
   .nav { order: 3; width: 100%; margin-left: -12px; overflow-x: auto; }
