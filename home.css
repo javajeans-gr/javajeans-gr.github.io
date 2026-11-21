@@ -84,6 +84,11 @@ h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
 .shot img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 30px rgba(11, 19, 40, .22)); }
 .shot-label { margin-top: 10px; font-size: .95rem; font-weight: 700; color: var(--ink); text-align: center; }
 .shots figcaption { flex-basis: 100%; text-align: center; font-size: .95rem; color: var(--muted); margin-top: 4px; }
+/* Hero photos: the Star holding her phone (left) and her Angel holding theirs (right), same size. */
+.shots-photos { max-width: 600px; gap: 12px 14px; }
+@media (min-width: 900px) { .hero-grid-photos { grid-template-columns: 1fr 1fr; } }
+.shots-photos .shot-her, .shots-photos .shot-family { flex: 1 1 0; }
+.shots-photos .shot img { filter: none; border-radius: 18px; box-shadow: 0 18px 34px rgba(11, 19, 40, .20); }
 
 /* Sections */
 .section { padding: 56px 0; }
