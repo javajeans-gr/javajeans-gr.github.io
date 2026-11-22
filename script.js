@@ -20,7 +20,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-30s.webp',
     photoAlt: 'A woman in her early thirties checks her phone in a park after a morning run.',
-    adoption: ['Self-setup', 'Rich trend controls', 'Optional Angel later']
+    adoption: ['Sets it up on their own', 'Detailed charts of their own trends', 'Can add family later, if they want']
   },
   '40s': {
     persona: 'Juggling work and family',
@@ -39,7 +39,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-40s.webp',
     photoAlt: 'A man in his mid forties looks at his phone at the family kitchen table in the evening.',
-    adoption: ['Fast setup', 'Household sharing', 'Clear low-friction notifications']
+    adoption: ['Quick to set up', 'Family can follow along', 'Alerts only when something matters']
   },
   '50s': {
     persona: 'At the peak of a career',
@@ -58,7 +58,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-50s.webp',
     photoAlt: 'A woman in her mid fifties reads her phone on the living-room sofa.',
-    adoption: ['High-detail Star view', 'Guided setup option', 'Easy report sharing']
+    adoption: ['Full detail on their own readings', 'Step-by-step setup if they want it', 'A report ready to share with the doctor']
   },
   '60s': {
     persona: 'Newly retired',
@@ -77,7 +77,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-60s.webp',
     photoAlt: 'A man in his mid sixties checks his phone on his back porch, a cup of tea beside him.',
-    adoption: ['Guided setup', 'Readable controls', 'Fewer choices with optional Angel invitation']
+    adoption: ['Step-by-step setup', 'Screens that are easy to read', 'Fewer choices; invite family when ready']
   },
   '70s': {
     persona: 'Living independently',
@@ -96,7 +96,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-70s.webp',
     photoAlt: 'A man in his mid seventies, in reading glasses, looks at his phone in his armchair.',
-    adoption: ['Simple controls', 'Large targets', 'Defaults and Angel-assisted onboarding']
+    adoption: ['Simple screens', 'Large buttons and text', 'Family can help set it up']
   },
   '80s': {
     persona: 'Supported by family',
@@ -115,7 +115,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-80s.webp',
     photoAlt: 'A woman in her mid eighties smiles at her phone in her armchair, a blanket over her knees.',
-    adoption: ['Angel-led setup', 'Passive capture', 'Maximum readability']
+    adoption: ['Family sets it up', 'Fall and safe-area alerts run in the background', 'The largest, clearest text']
   }
 };
 
