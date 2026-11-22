@@ -4,7 +4,8 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 
 const lifecyclePersonas = {
   '30s': {
-    persona: 'Proactive tracker',
+    persona: 'Proactive adult',
+    about: 'Builds healthy habits early and wants to see their own trends before anything is wrong.',
     color: '#14b8a6',
     light: '#f0fdfa',
     miss: [
@@ -22,7 +23,8 @@ const lifecyclePersonas = {
     adoption: ['Self-setup', 'Rich trend controls', 'Optional Angel later']
   },
   '40s': {
-    persona: 'Household health manager',
+    persona: 'Juggling work and family',
+    about: 'Keeps everyone’s health on track between work, children and an aging parent, with little time to spare.',
     color: '#06b6d4',
     light: '#ecfeff',
     miss: [
@@ -40,7 +42,8 @@ const lifecyclePersonas = {
     adoption: ['Fast setup', 'Household sharing', 'Clear low-friction notifications']
   },
   '50s': {
-    persona: 'Chronic-risk planner',
+    persona: 'At the peak of a career',
+    about: 'Busy at the top of their working life, when early changes in blood pressure, sugar or heart rate are easy to put off.',
     color: '#2f80ed',
     light: '#eff6ff',
     miss: [
@@ -58,7 +61,8 @@ const lifecyclePersonas = {
     adoption: ['High-detail Star view', 'Guided setup option', 'Easy report sharing']
   },
   '60s': {
-    persona: 'Transition',
+    persona: 'Newly retired',
+    about: 'Leaving work behind, with more appointments, medicines and lab results to keep track of.',
     color: '#6366f1',
     light: '#eef2ff',
     miss: [
@@ -76,7 +80,8 @@ const lifecyclePersonas = {
     adoption: ['Guided setup', 'Readable controls', 'Fewer choices with optional Angel invitation']
   },
   '70s': {
-    persona: 'Independent senior',
+    persona: 'Living independently',
+    about: 'Lives at home on their own terms; family wants peace of mind without hovering.',
     color: '#f59e0b',
     light: '#fffbeb',
     miss: [
@@ -94,7 +99,8 @@ const lifecyclePersonas = {
     adoption: ['Simple controls', 'Large targets', 'Defaults and Angel-assisted onboarding']
   },
   '80s': {
-    persona: 'Higher-support senior',
+    persona: 'Supported by family',
+    about: 'Family sets things up and keeps watch, so the parent has as little to do as possible.',
     color: '#ef4444',
     light: '#fef2f2',
     miss: [
@@ -116,6 +122,7 @@ const lifecyclePersonas = {
 document.querySelectorAll('[data-lifecycle-map]').forEach((map) => {
   const tabs = Array.from(map.querySelectorAll('[data-lifecycle-tab]'));
   const persona = map.querySelector('[data-lifecycle-persona]');
+  const about = map.querySelector('[data-lifecycle-about]');
   const miss = map.querySelector('[data-lifecycle-miss]');
   const adds = map.querySelector('[data-lifecycle-adds]');
   const adoption = map.querySelector('[data-lifecycle-adoption]');
@@ -131,6 +138,7 @@ document.querySelectorAll('[data-lifecycle-map]').forEach((map) => {
     map.style.setProperty('--lifecycle-color', content.color);
     map.style.setProperty('--lifecycle-light', content.light);
     if (persona) persona.textContent = content.persona;
+    if (about) about.textContent = content.about || '';
     renderList(miss, content.miss);
     renderList(adds, content.adds);
     renderList(adoption, content.adoption);

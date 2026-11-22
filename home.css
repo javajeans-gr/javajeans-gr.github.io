@@ -240,7 +240,8 @@ h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
 @media (min-width: 760px) and (max-width: 1039px) { .ages-person { grid-template-columns: .9fr 1.1fr; } .ages-person img { max-height: none; aspect-ratio: 4 / 5; } }
 @media (min-width: 1040px) { .ages-person { align-content: start; } .ages-person img { max-height: none; aspect-ratio: 1 / 1; height: auto; } }
 .ages-person figcaption { padding: 18px 20px 20px; }
-.ages-person h3 { font-size: clamp(1.4rem, 2.2vw, 1.75rem); margin: 0 0 16px; }
+.ages-person h3 { font-size: clamp(1.4rem, 2.2vw, 1.75rem); margin: 0 0 8px; }
+.ages-about { margin: 0 0 16px; color: var(--muted); font-size: 1rem; line-height: 1.5; }
 .ages-label { margin: 0 0 6px; font-size: .85rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--teal); }
 .ages-col { border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; background: var(--paper); }
 .ages-adds { border-top: 4px solid var(--teal); background: linear-gradient(180deg, #f2fbf9, var(--paper) 60%); }
