@@ -223,7 +223,9 @@ h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
 .ages-map { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; box-shadow: 0 18px 40px rgba(11, 19, 40, .07); }
 .ages-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 12px; background: var(--aqua); }
 @media (min-width: 540px) { .ages-tabs { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (min-width: 1040px) { .ages-tabs { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; padding: 16px; } }
+@media (min-width: 1040px) { .ages-tabs { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; padding: 16px; } }
+/* Five age groups (30s removed 2026-11-22): on two-column phones the last tab spans the row instead of sitting alone. */
+@media (max-width: 539px) { .ages-tab:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 .ages-tab { min-height: 76px; border: 2px solid transparent; border-radius: 14px; background: rgba(255, 255, 255, .6); color: var(--ink); font: inherit; cursor: pointer; padding: 10px 6px; text-align: center; transition: background .15s, border-color .15s, box-shadow .15s; }
 .ages-tab span { display: block; white-space: nowrap; font-size: .72rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--muted); line-height: 1.2; }
 .ages-tab strong { display: block; margin-top: 4px; font-size: clamp(1.5rem, 2.6vw, 2.1rem); line-height: 1.05; color: var(--teal); }

@@ -3,25 +3,6 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 });
 
 const lifecyclePersonas = {
-  '30s': {
-    persona: 'Proactive adult',
-    about: 'You build healthy habits early and want to see your own trends before anything is wrong.',
-    color: '#14b8a6',
-    light: '#f0fdfa',
-    miss: [
-      'Fitness apps track activity but ignore the connection between symptoms, labs, and recovery',
-      'Wearables and monitors stay as siloed feeds without a unified risk story',
-      'Generic health apps collect data but fail to notify care circles when baselines drift'
-    ],
-    adds: [
-      'Intelligently combines personal profile info with trends from vitals and labs to detect risk',
-      'Integrates wearables, Bluetooth cuffs, oximeters, scales, and camera vitals for a total view',
-      'Establishes healthy baselines versus risk shifts to communicate next steps to the Star and care circle'
-    ],
-    photo: 'assets/home/ages/star-30s.webp',
-    photoAlt: 'A woman in her early thirties checks her phone in a park after a morning run.',
-    adoption: ['Set it up on your own', 'Detailed charts of your own trends', 'Add family later, if you want']
-  },
   '40s': {
     persona: 'Juggling work and family',
     about: 'You keep everyone’s health on track between work, children and an aging parent, with little time to spare.',
