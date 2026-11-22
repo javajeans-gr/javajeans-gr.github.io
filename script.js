@@ -20,7 +20,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-30s.webp',
     photoAlt: 'A woman in her early thirties checks her phone in a park after a morning run.',
-    adoption: ['Sets it up on their own', 'Detailed charts of their own trends', 'Can add family later, if they want']
+    adoption: ['Set it up on your own', 'Detailed charts of your own trends', 'Add family later, if you want']
   },
   '40s': {
     persona: 'Juggling work and family',
@@ -39,7 +39,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-40s.webp',
     photoAlt: 'A man in his mid forties looks at his phone at the family kitchen table in the evening.',
-    adoption: ['Quick to set up', 'Family can follow along', 'Alerts only when something matters']
+    adoption: ['Quick to set up', 'Your family can follow along', 'Alerts only when something matters']
   },
   '50s': {
     persona: 'At the peak of a career',
@@ -58,7 +58,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-50s.webp',
     photoAlt: 'A woman in her mid fifties reads her phone on the living-room sofa.',
-    adoption: ['Full detail on their own readings', 'Step-by-step setup if they want it', 'A report ready to share with the doctor']
+    adoption: ['Full detail on your own readings', 'Step-by-step setup, if you want it', 'A report ready to share with your doctor']
   },
   '60s': {
     persona: 'Newly retired',
@@ -77,7 +77,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-60s.webp',
     photoAlt: 'A man in his mid sixties checks his phone on his back porch, a cup of tea beside him.',
-    adoption: ['Step-by-step setup', 'Screens that are easy to read', 'Fewer choices; invite family when ready']
+    adoption: ['Step-by-step setup', 'Screens that are easy to read', 'Fewer choices; invite family when you are ready']
   },
   '70s': {
     persona: 'Living independently',
@@ -96,7 +96,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-70s.webp',
     photoAlt: 'A man in his mid seventies, in reading glasses, looks at his phone in his armchair.',
-    adoption: ['Simple screens', 'Large buttons and text', 'Family can help set it up']
+    adoption: ['Simple screens', 'Large buttons and text', 'Your family can help you set it up']
   },
   '80s': {
     persona: 'Supported by family',
@@ -115,7 +115,7 @@ const lifecyclePersonas = {
     ],
     photo: 'assets/home/ages/star-80s.webp',
     photoAlt: 'A woman in her mid eighties smiles at her phone in her armchair, a blanket over her knees.',
-    adoption: ['Family sets it up', 'Fall and safe-area alerts run in the background', 'The largest, clearest text']
+    adoption: ['Your family sets it up for you', 'Fall and safe-area alerts work without you doing anything', 'The largest, clearest text']
   }
 };
 
