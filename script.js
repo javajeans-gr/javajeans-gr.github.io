@@ -17,6 +17,8 @@ const lifecyclePersonas = {
       'Integrates wearables, Bluetooth cuffs, oximeters, scales, and camera vitals for a total view',
       'Establishes healthy baselines versus risk shifts to communicate next steps to the Star and care circle'
     ],
+    photo: 'assets/home/ages/star-30s.webp',
+    photoAlt: 'A woman in her early thirties checks her phone in a park after a morning run.',
     adoption: ['Self-setup', 'Rich trend controls', 'Optional Angel later']
   },
   '40s': {
@@ -33,6 +35,8 @@ const lifecyclePersonas = {
       'Uses camera vitals, Bluetooth cuffs, oximeters, and scales to capture a complete healthy baseline',
       'Communicates risk shifts and next steps to the Star and care circle without noisy surveillance'
     ],
+    photo: 'assets/home/ages/star-40s.webp',
+    photoAlt: 'A man in his mid forties looks at his phone at the family kitchen table in the evening.',
     adoption: ['Fast setup', 'Household sharing', 'Clear low-friction notifications']
   },
   '50s': {
@@ -49,6 +53,8 @@ const lifecyclePersonas = {
       'Syncs wearables, Bluetooth cuffs, oximeters, scales, and camera vitals into one clinical story',
       'Differentiates healthy baseline from risk shifts to communicate next steps to the Star and care circle'
     ],
+    photo: 'assets/home/ages/star-50s.webp',
+    photoAlt: 'A woman in her mid fifties reads her phone on the living-room sofa.',
     adoption: ['High-detail Star view', 'Guided setup option', 'Easy report sharing']
   },
   '60s': {
@@ -65,6 +71,8 @@ const lifecyclePersonas = {
       'Consent-safe visibility for family before a crisis occurs while Star stays in control',
       'Guided UX that reduces technical burden while preserving user independence'
     ],
+    photo: 'assets/home/ages/star-60s.webp',
+    photoAlt: 'A man in his mid sixties checks his phone on his back porch, a cup of tea beside him.',
     adoption: ['Guided setup', 'Readable controls', 'Fewer choices with optional Angel invitation']
   },
   '70s': {
@@ -81,6 +89,8 @@ const lifecyclePersonas = {
       'Trusted alerts with health context',
       'Family peace of mind while the Star keeps control'
     ],
+    photo: 'assets/home/ages/star-70s.webp',
+    photoAlt: 'A man in his mid seventies, in reading glasses, looks at his phone in his armchair.',
     adoption: ['Simple controls', 'Large targets', 'Defaults and Angel-assisted onboarding']
   },
   '80s': {
@@ -97,6 +107,8 @@ const lifecyclePersonas = {
       'Fall or help response with broader signal context',
       'Angel view with minimal Star burden'
     ],
+    photo: 'assets/home/ages/star-80s.webp',
+    photoAlt: 'A woman in her mid eighties smiles at her phone in her armchair, a blanket over her knees.',
     adoption: ['Angel-led setup', 'Passive capture', 'Maximum readability']
   }
 };
@@ -107,6 +119,7 @@ document.querySelectorAll('[data-lifecycle-map]').forEach((map) => {
   const miss = map.querySelector('[data-lifecycle-miss]');
   const adds = map.querySelector('[data-lifecycle-adds]');
   const adoption = map.querySelector('[data-lifecycle-adoption]');
+  const photo = map.querySelector('[data-lifecycle-photo]');
 
   const renderList = (node, items) => {
     if (!node) return;
@@ -121,16 +134,39 @@ document.querySelectorAll('[data-lifecycle-map]').forEach((map) => {
     renderList(miss, content.miss);
     renderList(adds, content.adds);
     renderList(adoption, content.adoption);
+    if (photo && content.photo) {
+      photo.src = content.photo;
+      photo.alt = content.photoAlt;
+    }
     tabs.forEach((tab) => {
       const selected = tab.dataset.lifecycleTab === age;
       tab.setAttribute('aria-selected', selected ? 'true' : 'false');
+      tab.tabIndex = selected ? 0 : -1;
       tab.style.setProperty('--lifecycle-color', lifecyclePersonas[tab.dataset.lifecycleTab].color);
     });
   };
 
-  tabs.forEach((tab) => {
+  tabs.forEach((tab, index) => {
+    tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
     tab.addEventListener('click', () => selectAge(tab.dataset.lifecycleTab));
+    tab.addEventListener('keydown', (event) => {
+      const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
+      if (!step) return;
+      event.preventDefault();
+      const next = tabs[(index + step + tabs.length) % tabs.length];
+      selectAge(next.dataset.lifecycleTab);
+      next.focus();
+    });
   });
 
   selectAge('50s');
+
+  // Fetch the other age photos once the page has loaded, so switching tabs never shows an empty frame.
+  if (photo) {
+    window.addEventListener('load', () => {
+      Object.values(lifecyclePersonas).forEach((content) => {
+        if (content.photo) new Image().src = content.photo;
+      });
+    });
+  }
 });
