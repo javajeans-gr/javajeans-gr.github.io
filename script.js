@@ -5,7 +5,7 @@ document.querySelectorAll('[data-year]').forEach((node) => {
 const lifecyclePersonas = {
   '30s': {
     persona: 'Proactive adult',
-    about: 'Builds healthy habits early and wants to see their own trends before anything is wrong.',
+    about: 'You build healthy habits early and want to see your own trends before anything is wrong.',
     color: '#14b8a6',
     light: '#f0fdfa',
     miss: [
@@ -24,7 +24,7 @@ const lifecyclePersonas = {
   },
   '40s': {
     persona: 'Juggling work and family',
-    about: 'Keeps everyone’s health on track between work, children and an aging parent, with little time to spare.',
+    about: 'You keep everyone’s health on track between work, children and an aging parent, with little time to spare.',
     color: '#06b6d4',
     light: '#ecfeff',
     miss: [
@@ -42,8 +42,8 @@ const lifecyclePersonas = {
     adoption: ['Quick to set up', 'Your family can follow along', 'Alerts only when something matters']
   },
   '50s': {
-    persona: 'At the peak of a career',
-    about: 'Busy at the top of their working life, when early changes in blood pressure, sugar or heart rate are easy to put off.',
+    persona: 'At the peak of your career',
+    about: 'You are busy at the top of your working life, when early changes in blood pressure, sugar or heart rate are easy to put off.',
     color: '#2f80ed',
     light: '#eff6ff',
     miss: [
@@ -62,7 +62,7 @@ const lifecyclePersonas = {
   },
   '60s': {
     persona: 'Newly retired',
-    about: 'Leaving work behind, with more appointments, medicines and lab results to keep track of.',
+    about: 'You are leaving work behind, with more appointments, medicines and lab results to keep track of.',
     color: '#6366f1',
     light: '#eef2ff',
     miss: [
@@ -81,7 +81,7 @@ const lifecyclePersonas = {
   },
   '70s': {
     persona: 'Living independently',
-    about: 'Lives at home on their own terms; family wants peace of mind without hovering.',
+    about: 'You live at home on your own terms; your family wants peace of mind without hovering.',
     color: '#f59e0b',
     light: '#fffbeb',
     miss: [
@@ -100,7 +100,7 @@ const lifecyclePersonas = {
   },
   '80s': {
     persona: 'Supported by family',
-    about: 'Family sets things up and keeps watch, so the parent has as little to do as possible.',
+    about: 'Your family sets things up and keeps watch, so you have as little to do as possible.',
     color: '#ef4444',
     light: '#fef2f2',
     miss: [
