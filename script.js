@@ -135,20 +135,55 @@ document.querySelectorAll('[data-lifecycle-map]').forEach((map) => {
     });
   };
 
+  // The section plays through the ages on its own until someone chooses one (2026-11-26).
+  const panel = map.querySelector('[role="tabpanel"]');
+  const stopAuto = () => {
+    if (!map.classList.contains('is-auto')) return;
+    map.classList.remove('is-auto');
+    if (panel) panel.setAttribute('aria-live', 'polite');
+  };
+  const restartTimer = (tab) => {
+    const timer = tab.querySelector('.ages-timer');
+    if (!timer) return;
+    const fresh = timer.cloneNode(true);
+    timer.replaceWith(fresh);
+    fresh.addEventListener('animationend', () => {
+      if (!map.classList.contains('is-auto')) return;
+      const index = tabs.indexOf(tab);
+      const next = tabs[(index + 1) % tabs.length];
+      selectAge(next.dataset.lifecycleTab);
+      restartTimer(next);
+    });
+  };
+
   tabs.forEach((tab, index) => {
     tab.tabIndex = tab.getAttribute('aria-selected') === 'true' ? 0 : -1;
-    tab.addEventListener('click', () => selectAge(tab.dataset.lifecycleTab));
+    tab.addEventListener('click', () => {
+      stopAuto();
+      selectAge(tab.dataset.lifecycleTab);
+    });
     tab.addEventListener('keydown', (event) => {
       const step = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 }[event.key];
       if (!step) return;
       event.preventDefault();
+      stopAuto();
       const next = tabs[(index + step + tabs.length) % tabs.length];
       selectAge(next.dataset.lifecycleTab);
       next.focus();
     });
   });
 
-  selectAge('50s');
+  selectAge(tabs[0].dataset.lifecycleTab);
+  restartTimer(tabs[0]);
+
+  // Play only while the section is on screen, starting from the first age when it first comes into view.
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach((entry) => map.classList.toggle('is-visible', entry.isIntersecting));
+    }, { threshold: 0.35 }).observe(map);
+  } else {
+    map.classList.add('is-visible');
+  }
 
   // Fetch the other age photos once the page has loaded, so switching tabs never shows an empty frame.
   if (photo) {

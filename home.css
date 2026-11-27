@@ -264,3 +264,18 @@ h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
 
 /* Legal footer (2026-11-26): the App Store wellness lines, word for word. */
 .legal-banner { margin: 12px 0 0; font-weight: 700; font-size: 0.95rem; color: var(--ink); }
+
+/* Age tabs read as buttons (2026-11-26): each is a raised card with that age's face, lifts on hover, and the one
+   showing carries a thin bar that fills while the section plays through the ages on its own. A click or key press
+   stops the playing for good; hovering or focusing inside the section pauses it. */
+.ages-tab { position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; gap: 2px; background: var(--paper); border: 1px solid var(--line); box-shadow: 0 2px 6px rgba(11, 19, 40, .06); transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; }
+.ages-tab:hover { transform: translateY(-2px); border-color: var(--teal); box-shadow: 0 10px 22px rgba(11, 19, 40, .12); }
+.ages-tab[aria-selected="true"] { border: 2px solid var(--teal); box-shadow: 0 10px 22px rgba(11, 19, 40, .12); }
+.ages-face { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; margin-bottom: 4px; border: 2px solid var(--paper); box-shadow: 0 0 0 1px var(--line); filter: saturate(.85); transition: filter .15s ease, box-shadow .15s ease; }
+.ages-tab:hover .ages-face, .ages-tab[aria-selected="true"] .ages-face { filter: none; box-shadow: 0 0 0 2px var(--teal); }
+.ages-timer { position: absolute; left: 0; bottom: 0; height: 4px; width: 100%; background: var(--teal); transform: scaleX(0); transform-origin: left center; opacity: 0; }
+.ages-map.is-auto.is-visible .ages-tab[aria-selected="true"] .ages-timer { opacity: .9; animation: ages-fill 7s linear forwards; }
+.ages-map.is-auto:hover .ages-timer, .ages-map.is-auto:focus-within .ages-timer { animation-play-state: paused; }
+@keyframes ages-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (max-width: 539px) { .ages-face { width: 30px; height: 30px; } }
+@media (prefers-reduced-motion: reduce) { .ages-tab:hover { transform: none; } }
