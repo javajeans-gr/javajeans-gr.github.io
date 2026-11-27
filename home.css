@@ -261,3 +261,6 @@ h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); letter-spacing: -.01em; }
 
 @media (max-width: 539px) { .ages-tab { padding: 10px 4px; } .ages-tab span { letter-spacing: .02em; } }
 @media (max-width: 359px) { .ages-tab span { font-size: .63rem; letter-spacing: 0; } }
+
+/* Legal footer (2026-11-26): the App Store wellness lines, word for word. */
+.legal-banner { margin: 12px 0 0; font-weight: 700; font-size: 0.95rem; color: var(--ink); }

@@ -4160,3 +4160,6 @@ select {
 .lifecycle-tab:focus-visible { outline: 3px solid #2f80ed; outline-offset: 3px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .contact-card p a { color: var(--teal); text-decoration: underline; }
+
+/* Legal footer (2026-11-26): the App Store wellness lines, word for word. */
+.legal-banner { margin: 12px 0 0; font-weight: 700; font-size: 0.95rem; color: var(--ink); }
